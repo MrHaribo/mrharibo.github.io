@@ -47,11 +47,7 @@ An **Eclipse Oxygen** installation is required to use the MicroNet tools. It is 
 
 Download the *Eclipse IDE for Java Developers* from the [Eclipse Download Page](https://www.eclipse.org/downloads/eclipse-packages/) which is appropriate for your operating system. Be shure to download the packaged version of Eclipse and not the installer to enshure the separation of the Eclipse used by MicroNet to other Eclipse Installations. 
 
-> The Enterprise Edition of Eclipse (Eclipse IDE for Java EE Developers) is not required for MicroNet development and it is therefore not recommended to not overwhelm the developer with unused IDE funcionalities.   
-
-## Workspace Setup
-
-When you open Eclipse you will be prompted for a *Workspace Directory*. Every Game developed with MicroNet needs it's own Workspace Directory. You can use the same MicroNet Eclipse installation for multiple games by using different workspaces for each game. In this tutorial a directory called "MyGame" will be used as Workspace Directory.
+> The Enterprise Edition of Eclipse (Eclipse IDE for Java EE Developers) is not required for MicroNet development and it is therefore not recommended to not overwhelm the developer with unused IDE funcionalities.
 
 ### MicroNet Tools Installation
 
@@ -64,6 +60,10 @@ Inside Eclipse open the *Help -> Install New Software...* dialog. Press the *Add
 #### Install Docker Toolbox
 
 Although not required it is recommended to install the Docker Tools for Eclipse. The Docker Tools are a handy collection of visual tools that ease the management of the Docker Engine. The Eclipse Docker Tools can be installed via the Eclipse Marketplace under *Help -> Eclipse Marketplace...*. Just type "Docker Tools" in the search field. 
+
+## Workspace Setup
+
+When you open Eclipse you will be prompted for a *Workspace Directory*. Every Game developed with MicroNet needs it's own Workspace Directory. You can use the same MicroNet Eclipse installation for multiple games by using different workspaces for each game. In this tutorial a directory called "MyGame" will be used as Workspace Directory.
 
 ### MicroNet Settings
 
