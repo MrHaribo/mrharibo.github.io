@@ -17,7 +17,7 @@ MicroNet itself does not require any installation but it requires both a **Docke
 The most convenient way to install docker on a developer's computer is by using the **Docker Desktop** version which is available for *MacOS* and *Microsoft Windows 10*. On Linux a native docker installation can be used.  
 
 #### Windows
-On Windows a Windows Pro version is required to use Docker Desktop because it requires **HyperV** to be enabled which is not possible on Windows Home Editions. If you have Windows 10, enable **HyperV** as explained in the Windows Documentation [Install Hyper-V on Windows 10](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v). Afterwards download and install the appropriate **Docker Desktop** client which can be found on the [Official Docker Installation Documentation](https://docs.docker.com/engine/installation/).
+On Windows a Windows Pro version is required to use Docker Desktop because it requires **HyperV** to be enabled which is not possible on Windows Home Editions (see requirements in [Install Docker for Windows[(https://docs.docker.com/docker-for-windows/install/)). If you have Windows 10 Pro, enable **HyperV** as explained in the Windows Documentation [Install Hyper-V on Windows 10](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v). Afterwards download and install the appropriate **Docker Desktop** client which can be found on the [Official Docker Installation Documentation](https://docs.docker.com/engine/installation/).
 
 If you don't have Windows 10 Pro the best alternative solution is to use the [Docker Toolbox](#docker-toolbox) as explained [below](#docker-toolbox). In any case test your docker installation using the for example the `docker info` command.
 
@@ -38,6 +38,8 @@ On Mac follow the official Docker [Installation Manual for MacOS](https://docs.d
 > MicroNet has not been tested on MacOS
 
 #### Docker Toolbox
+
+A fallback plan if none of the above solutions works is to use the Docker Toolbox. The Docker Toolbox uses VirtualBox as the virtualization technology which widely supportet. Docker Toolbox is also available on older operating systems.  
 
 ### Eclipse Installation
 
