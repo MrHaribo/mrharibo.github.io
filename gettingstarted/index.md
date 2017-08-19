@@ -43,6 +43,11 @@ A fallback plan if none of the above solutions works is to use the **Docker Tool
 
 ### Eclipse Installation
 
+An **Eclipse Oxygen** installation is required to use the MicroNet tools. It is recommended to download a new Eclipse Installation and use it solely for MicroNet because the MicroNet tools automatically synchronize specific files in the workspace which you do not want for projects other than MicroNet.
+
+Download the *Eclipse IDE for Java Developers* from the [Eclipse Download Page](https://www.eclipse.org/downloads/eclipse-packages/) which is appropriate for your operating system. Be shure to download the packaged version of Eclipse and not the installer to enshure the separation of the Eclipse used by MicroNet to other Eclipse Installations. 
+
+> The Enterprise Edition of Eclipse (Eclipse IDE for Java EE Developers) is not required for MicroNet development and it is therefore not recommended to not overwhelm the developer with unused IDE funcionalities.   
 
 ## Workspace Setup
 
