@@ -39,7 +39,7 @@ On Mac follow the official Docker [Installation Manual for MacOS](https://docs.d
 
 #### Docker Toolbox
 
-A fallback plan if none of the above solutions works is to use the Docker Toolbox. The Docker Toolbox uses VirtualBox as the virtualization technology which widely supportet. Docker Toolbox is also available on older operating systems.  
+A fallback plan if none of the above solutions works is to use the Docker Toolbox. The Docker Toolbox uses VirtualBox as the virtualization technology which widely supportet. Docker Toolbox is also available on older operating systems. Use the [Official Documentation](https://docs.docker.com/toolbox/overview/) to learn how to install Docker Toolbox.
 
 ### Eclipse Installation
 
