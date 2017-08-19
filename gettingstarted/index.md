@@ -51,4 +51,8 @@ Download the *Eclipse IDE for Java Developers* from the [Eclipse Download Page](
 
 ## Workspace Setup
 
+When you open Eclipse you will be prompted for a *Workspace Directory*. Every Game developed with MicroNet needs it's own Workspace Directory. You can use the same MicroNet Eclipse installation for multiple games by using different workspaces for each game. In this tutorial a directory called "MyGame" will be used as Workspace Directory.
+
+The worspace of a game contains a set of metadata wich is automatically generated when the workspace is opened for the first time. The first step after opening the workspace should be to configure the generated metadata according to the game you want to develop. Open the MicroNet global preference page under *Window -> Preferences -> MicroNet*.
+
 ## Whats Next
