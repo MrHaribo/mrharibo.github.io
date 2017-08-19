@@ -57,6 +57,8 @@ When you open Eclipse you will be prompted for a *Workspace Directory*. Every Ga
 
 Inside Eclipse open the *Help -> Install New Software...* dialog. Press the *Add...* button in the top section to add a new Update Site to this Eclipse Installation. Enter *MicroNet* as a name and add *https://mrharibo.github.io/updatesite/* as location. With the MicroNet update site selected select and install the MicroNet plug-in. This plug-in contains all MicroNet Tools.
 
+> Sometimes the MicroNet category is not shown and the check box *Group items by category* must be deselected for MicroNet to show up as indicated in the image below.
+
 #### Install Docker Toolbox
 
 Although not required it is recommended to install the Docker Tools for Eclipse. The Docker Tools are a handy collection of visual tools that ease the management of the Docker Engine. The Eclipse Docker Tools can be installed via the Eclipse Marketplace under *Help -> Eclipse Marketplace...*. Just type "Docker Tools" in the search field. 
