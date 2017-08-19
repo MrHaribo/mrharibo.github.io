@@ -93,4 +93,4 @@ As a last step you need to display the MicroNet specific views. Open the *Window
 
 ## Whats Next
 
-If you yould successfully complete the previous steps you are ready to build your first game using MicroNet. Read on in the Example Game Page.
+If you yould successfully complete the previous steps you are ready to build your first game using MicroNet. Read on in the [Example Game tutorial](../tutorial/index.md) Page.
