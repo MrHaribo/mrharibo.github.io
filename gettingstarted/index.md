@@ -59,6 +59,8 @@ Inside Eclipse open the *Help -> Install New Software...* dialog. Press the *Add
 
 > Sometimes the MicroNet category is not shown and the check box *Group items by category* must be deselected for MicroNet to show up as indicated in the image below.
 
+![micronet-update-site](UpdatesiteMarked.PNG "MicroNet Update Site")
+
 #### Install Docker Toolbox
 
 Although not required it is recommended to install the Docker Tools for Eclipse. The Docker Tools are a handy collection of visual tools that ease the management of the Docker Engine. The Eclipse Docker Tools can be installed via the Eclipse Marketplace under *Help -> Eclipse Marketplace...*. Just type "Docker Tools" in the search field. 
