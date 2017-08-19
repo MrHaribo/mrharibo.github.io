@@ -3,9 +3,13 @@
 This page explains which steps are required to setup MicroNet.
 
 * [Installation](#installation)
+
   * [Docker Installation](#docker-installation)
+  
   * [Eclipse Installation](#eclipse-installation)
+  
 * [Workspace Setup](#workspace-setup)
+
 * [Whats Next](#whats-next)
 
 ## Installation
