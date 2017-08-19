@@ -23,13 +23,19 @@ If you don't have Windows 10 Pro the best alternative solution is to use the [Do
 
 #### Linux
 
-On Linux use the appropriate installation guide for your opperating system: 
+On Linux choose the appropriate installation guide for your Linux opperating system: 
 [Ubuntu](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/), 
 [Debian](https://docs.docker.com/engine/installation/linux/docker-ce/debian/), 
 [CentOS](https://docs.docker.com/engine/installation/linux/docker-ce/centos/), or
 [Fedora](https://docs.docker.com/engine/installation/linux/docker-ce/fedora/).
 
+> MicroNet has not been tested on Linux Operating Systems 
+
 #### MacOS
+
+On Mac follow the official Docker [Installation Manual for MacOS](https://docs.docker.com/docker-for-mac/install/).
+
+> MicroNet has not been tested on MacOS
 
 #### Docker Toolbox
 
