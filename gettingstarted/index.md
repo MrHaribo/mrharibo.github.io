@@ -2,9 +2,13 @@
 
 This page explains which steps are required to setup MicroNet.
 
-* [Installation](#installation)
-* [Workspace Setup](#workspace-setup)
-* [Whats Next](#whats-next)
+* [MicroNet Documentation](../index.md)
+  * [Getting Started](./index.md)
+    * [Installation](#installation)
+    * [Workspace Setup](#workspace-setup)
+    * [Whats Next](#whats-next)
+  * [Example Game Tutorial](../tutorial/index.md)
+  * [Quick Reference](../quickreference/index.md)
 
 ## Installation
 
