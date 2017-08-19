@@ -7,5 +7,5 @@ The framework provides components to abstract the low level aspects networking, 
 The MicroNet Tools are a plug-in collection for the Eclipse IDE. The plug-ins provide a convenient way to develop the overall application behaviour of an application that is composed from multiple Microservices.
 
 - [Getting Started](gettingstarted/index.md)
-- Example Game Tutorial
-- Quick Reference
+- [Example Game Tutorial](tutorial/index.md)
+- [Quick Reference](quickreference/index.md)
