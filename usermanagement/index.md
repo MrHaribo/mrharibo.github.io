@@ -28,7 +28,13 @@ The Account archetype is a Multi-Module Maven archetype and consists of two proj
 
 > Notice that choosing the acrifactId "Account" results in the Service projects: Account, AccountService, and AccountDB. The Account project it self is not used for anything but is required for the Maven project Hierarchy.
 
-Build and Run the AccountDB as a *Service Container*. Also start the AccountService project either native or as a container.  
+Build and Run the AccountDB as a *Service Container*. Also start the AccountService project either *Native* or as a *Service Container*.
+
+## Test Client
+
+If all the services are running you are finally ready to connect to the MicroNet application using a client. Add the **mn-archetype-testclient** archetype to wour game workspace. The test client is a native Java application providing a little console style UI. To start the TestClient right click the MyGame.TestClient.TestClient.java in the *src/main/java* directory and click *Run/Debug As -> Java Application*.
+
+If everything went well you can register and login at this point... You are online!
 
 
 
