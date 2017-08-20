@@ -36,5 +36,7 @@ If all the services are running you are finally ready to connect to the MicroNet
 
 If everything went well you can register and login at this point... You are online!
 
+## Whats Next
 
+Now that we have basic communication and user management out of the way we can finally move on an implement some gameplay functionality. Continue with the [Simple Example Game](../tutorial/index.md) section.
 
