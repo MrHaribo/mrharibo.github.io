@@ -23,9 +23,19 @@ Prefabs are instances of template objects. Prefabs can be created from model tem
 
 ## Parameter Codes
 
-A message trans
+A MicroNet message transfer can be augmented by adding parameters to a message. Each parameter of a message is identified by a ParameterCode. The ParameterCodes are global for the whole game application. The following snipplet shows how to add and get Parameters to a from and to a message.
 
+```java
+		Request request = new Request();
+		request.getParameters().set(ParameterCode.USER_ID, 42);
+		int userID = request.getParameters().getInt(ParameterCode.USER_ID);
+```
 
+The Parameter Codes of the game application can be edited via the *ParameterCode View*. It is possible to to add and remove ParameterCodes. It is also shown in the ParameterCode View which codes are used by which service. Just like Model Templates, required ParameterCodes are contributed to the game workspace when a service is added. The ParameterCode View always contains the three buit in codes: USER_ID, USER_REQUEST, and EVENT. These three codes are used by the framework and cannot be removed.
+
+The image below shows the ParameterCode View for the Simple Example Game. No additional Parameters are used in this example.
+
+![parameter-code-view](ParameterCodeView.PNG "Parameter Code View of the Simple Example Game")
 
 ## Shared API
 
