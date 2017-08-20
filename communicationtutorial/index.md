@@ -24,10 +24,22 @@ Over the MicroNet Service Catalog add the *mn-archetype-simpleservice* to your g
 
 > Note that at the moment it is not possible to locally run the same container twice for testing. This feature is planned to be added in the future. Meanwhile you can use Docker Swarm to deploy multiple instances of the same container using the *docker service* CLI.
 
+## Adding a Communication Partner
 
+One service of course does not make up a very interessting distributed application so we spice thing up a little by adding a communication partner for our lonely *FooService*. But before we do that, we need to enshure that we give FooService a proper address to it can be accessed by other services or later by the users of the application. In the Main Class of FooService edit the `@MessageService` annotation and enter a valid URI like for example "mn://foo". The protocol portion "mn://" of the URI is required for a service to be recognized by a MicroNet application. Also in the ServiceFoo class remove the 
 
+`context.sendRequest("mn://my_service/hello/world/handler", new Request("Hello"));` call from the start method since the service "mn://my_service" no longer exists.
 
+Now add another *mn-archetype-simpleservice* archetype project to your game workspace and name the artifactId **BarService**. In the Main Class of the BarService change the `@MessageService` and enter a valid URI for the service for example "mn://bar". Change the call in the BarService Main Class from 
 
+`context.sendRequest("mn://my_service/hello/world/handler", new Request("Hello"));`
 
+to
 
-In the Main Class edit the `@MessageService` and enter a valid URI like for example 
+`context.sendRequest("mn://foo/hello/world/handler", new Request("Hello from Bar"));`
+
+To test the communication between the service first enshure that no old service instances are running to interfere with our new services. Check this on the Debug View in the Java Debug Perspective and in the container folder in the Docker Explorer. You can leave ActiveMQ running because we still need it. Using your prefered method start both services. The order does not matter since messages are buffered by ActiveMQ and delivered as soon as a service is available. Observe the Console of both services to see if the communication was successful.
+
+## Whats Next
+
+Now that you have a simple service communication running it is time to move on to a more concrete example to learn how to work with MicroNet to build more complex applications especially online games. Move on to the [Simple Example Game](../tutorial.index.md) Tutorial.
