@@ -18,18 +18,18 @@ One thing that is left to do for the developer is to decide at what moment the p
 @RequestPayload(CredentialValues.class)
 @ResponsePayload(value=Integer.class, desc="UserID of the User that logged in")
 public Response onLogin(Context context, Request request) {
-		CredentialValues credentials = Serialization.deserialize(request.getData(), CredentialValues.class);
-		UserValues user = database.getUser(credentials.getUsername());
+	CredentialValues credentials = Serialization.deserialize(request.getData(), CredentialValues.class);
+	UserValues user = database.getUser(credentials.getUsername());
 
-		if (user == null)
-			 return new Response(StatusCode.NOT_FOUND);
-		if (!credentials.getPassword().equals(user.getCredentials().getPassword()))
-			 return new Response(StatusCode.UNAUTHORIZED);
+	if (user == null)
+		return new Response(StatusCode.NOT_FOUND);
+	if (!credentials.getPassword().equals(user.getCredentials().getPassword()))
+		return new Response(StatusCode.UNAUTHORIZED);
 
-		Request addPlayerRequest = new Request(credentials.getUsername());
-		addPlayerRequest.getParameters().set(ParameterCode.USER_ID, user.getId());
-		context.sendRequest("mn://player/add", addPlayerRequest);
+	Request addPlayerRequest = new Request(credentials.getUsername());
+	addPlayerRequest.getParameters().set(ParameterCode.USER_ID, user.getId());
+	context.sendRequest("mn://player/add", addPlayerRequest);
 
-		return new Response(StatusCode.OK, Integer.toString(user.getId()));
+	return new Response(StatusCode.OK, Integer.toString(user.getId()));
 }
 ```
