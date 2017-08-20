@@ -55,4 +55,4 @@ Generally all MicroNet annotations support a description field to document the f
 
 Once API annotations exist, MicroNet uses this information to present the API to the developer. The complete API is presented in a hierarchical fashion starting with the available services. To test this feature type "mn://" somewhere in code and press Ctrl+Space to open the Eclipse Content Assist. You will notice that the full service proposal that is documented is available. The image below shows MicroNet Code Assist in action.
 
-![content-assist](ContentAssist.PNG "MicroNet Content Assist")
+![content-assist](CodeAssist.PNG "MicroNet Content Assist")
