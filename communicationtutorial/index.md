@@ -36,13 +36,13 @@ call from the start method since the service "mn://my_service" no longer exists.
 Now add another *mn-archetype-simpleservice* archetype project to your game workspace and name the artifactId **BarService**. In the Main Class of the BarService change the `@MessageService` and enter a valid URI for the service for example "mn://bar". Change the call in the BarService Main Class from 
 
 ```java
-`context.sendRequest("mn://my_service/hello/world/handler", new Request("Hello"));`
+context.sendRequest("mn://my_service/hello/world/handler", new Request("Hello"));
 ```
 
 to
 
 ```java
-`context.sendRequest("mn://foo/hello/world/handler", new Request("Hello from Bar"));`
+context.sendRequest("mn://foo/hello/world/handler", new Request("Hello from Bar"));
 ```
 
 To test the communication between the service first enshure that no old service instances are running to interfere with our new services. Check this on the Debug View in the Java Debug Perspective and in the container folder in the Docker Explorer. You can leave ActiveMQ running because we still need it. Using your prefered method start both services. The order does not matter since messages are buffered by ActiveMQ and delivered as soon as a service is available. Observe the Console of both services to see if the communication was successful.
