@@ -33,3 +33,18 @@ public Response onLogin(Context context, Request request) {
 	return new Response(StatusCode.OK, Integer.toString(user.getId()));
 }
 ```
+## Vote and Round Service
+
+Add the *mn-archetype-voteservice* and *mn-archetype-roundservice* to the game workspace. Start both services like any other service. With these two services the Simple Example Game is Complete.
+
+> The Round Service is a little bit special since it has the requirement to be instantiated only once because the Round Control Events may only be broadcasted once. MicroNet does not yet provide a way to allow only one service instance so the developer is responsible to enshure this.
+
+## Testing the Simple Example Game
+
+To test the game you just developed start the TestClient like you did in the UserManagement tutorial. After the login you will periodically receive new Round updated and get the chance to place your vote. You can also log in with multiple client simultaneously and play against yourself by starting multiple TestClients.
+
+> Note that since the TestClient does not initially download the scoreboard you have to wait for 0-10 seconds for the game to react. This will be fixed in the future. 
+
+## Whats Next
+
+You just completed your fist simple MicroNet game but there is much more you can explore. Refer to the [QuickReference](../quickreference/index.md) page to read more about more advanced MicroNet functionality and concepts. 
