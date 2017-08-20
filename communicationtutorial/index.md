@@ -49,4 +49,4 @@ To test the communication between the service first enshure that no old service 
 
 ## Whats Next
 
-Now that you have a simple service communication running it is time to move on to a more concrete example to learn how to work with MicroNet to build more complex applications especially online games. Move on to the [Simple Example Game](../tutorial.index.md) Tutorial.
+Now that you have a simple service communication running it is time to move on to a more concrete example to learn how to work with MicroNet to build more complex applications especially online games. Move on to the [Simple Example Game](../tutorial/index.md) Tutorial.
