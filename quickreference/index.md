@@ -43,4 +43,16 @@ MicroNet achieves loose coupling of services by sharing the API in a platform in
 
 ### Documenting the Shared API with Annotations
 
-In addition to the mandatory `@MessageService` and `@MessageListener` annotation MicroNet provides additional optional annotations to document the API for quick access in other services. 
+In addition to the mandatory `@MessageService` and `@MessageListener` annotation MicroNet provides additional optional annotations to document the API for quick access in other services.
+
+The `@RequestPayload` and `@ResponsePayload` annotations document the type of the message payload. This can be a primitive type or a model type from the Shared Model. Types which are not part of the shared model cannot be used as message payload.
+
+The `@RequestParameters` and `@ResponseParameters` annotations allow to define an array of `@MessageParameter` annotations. Each message parameter must be defined by a ParameterCode along with the class of the payload type.
+
+Generally all MicroNet annotations support a description field to document the functionality of the Shared API in humand readable form. 
+
+### Accessing the Shared API with Code Assist
+
+Once API annotations exist, MicroNet uses this information to present the API to the developer. The complete API is presented in a hierarchical fashion starting with the available services. To test this feature type "mn://" somewhere in code and press Ctrl+Space to open the Eclipse Content Assist. You will notice that the full service proposal that is documented is available. The image below shows MicroNet Code Assist in action.
+
+![content-assist](ContentAssist.PNG "MicroNet Content Assist")
