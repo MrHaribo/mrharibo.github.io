@@ -24,7 +24,7 @@ Over the MicroNet Service Catalog add the *mn-archetype-simpleservice* to your g
 
 ![project-explorer](ProjectExplorer.PNG "Project Explorer showing a Service Project")
 
-> Tip: If you find that a Service Project contains way to many folders in the Project Explorer as I do :) add a new *Filter* via the *Drop Down* menu of the Project Explorer. Add "src, target, shared_contribution" as Name filter patterns as shwon in the image below.
+> Tip: If you find that a Service Project contains way to many folders in the Project Explorer as I do :) add a new *Filter* via the *Drop Down* menu of the Project Explorer. Add "src, target, shared_contribution" as Name filter patterns as shwon in the image below. You can also check the *Libraries from external* checkbox in exclude from view list but to check these folders is sometimes useful.
 
 ![name-filter-patterns](NameFilterPatterns.PNG "Useful Name filter patterns")
 
