@@ -32,7 +32,7 @@ Build and Run the AccountDB as a *Service Container*. Also start the AccountServ
 
 ## Test Client
 
-If all the services are running you are finally ready to connect to the MicroNet application using a client. Add the **mn-archetype-testclient** archetype to wour game workspace. The test client is a native Java application providing a little console style UI. To start the TestClient right click the MyGame.TestClient.TestClient.java in the *src/main/java* directory and click *Run/Debug As -> Java Application*.
+If all the services are running you are finally ready to connect to the MicroNet application using a client. Add the **mn-archetype-testclient** archetype from the *MicroNet EXAMPLE Service Catalog* to wour game workspace. The test client is a native Java application providing a little console style UI. To start the TestClient right click the MyGame.TestClient.TestClient.java in the *src/main/java* directory and click *Run/Debug As -> Java Application*.
 
 If everything went well you can register and login at this point... You are online!
 
