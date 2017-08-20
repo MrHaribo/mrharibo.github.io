@@ -10,7 +10,7 @@ MicroNet uses [Couchbase](https://www.couchbase.com/) as a NoSQL database to pro
 
 > Since usually multiple instance of a Microservices are deployed to achieve reliablilty Microservices are not allowed to store session data directly in memory. Instead the session store can be used persist data between request.
 
-Add the *mn-archetype-couchbase* archetype to your game workspace using the MicroNet Service Catalog. Perform a *Full Service Build* of the Couchbase Service Project from the Service Explorer and afterwards start Couchbase via *Start Serivce Container*.
+Add the **mn-archetype-couchbase** archetype to your game workspace using the MicroNet Service Catalog. Perform a *Full Service Build* of the Couchbase Service Project from the Service Explorer and afterwards start Couchbase via *Start Serivce Container*.
 
 > MicroNet uses a shell script called *wait-for-it.sh* to enshure that required services like activemq are avaible before starting a service. This however does not work for couchbase because the ports offered by couchbase are already open during initialization of couchbase and therefore starting couchbase simultaneously with any dependent container leads inevitabley to errors. It es therefore recommended to start couchbase prior to any other services to enshure availibility. If anyone finds a solution for this, please contact me.
 
@@ -20,5 +20,15 @@ The Gateway offers the API that is provided by the individual Microservices. Obv
 
 > This two message broker concept is not yet implemented in MicroNet. Also Encryption is a feature that is not yet provided by MicroNet at this stage. Also all passwords are stored in plain text. All these security aspects will be covered as soon as possible.
 
-Add the *mn-archetype-gatewayservice* to the game workspace and launch it. Observe how the Gateway Service connects to the Session Store to access User Information later.
+Add the **mn-archetype-gatewayservice** to the game workspace and launch it. Observe how the Gateway Service connects to the Session Store to access User Information later.
+
+## Account Service
+
+The Account archetype is a Multi-Module Maven archetype and consists of two projects, the AccountService and the AccountDB projects. Add the **mn-archetype-account** archetype to your game workspace. 
+
+> Notice that choosing the acrifactId "Account" results in the Service projects: Account, AccountService, and AccountDB. The Account project it self is not used for anything but is required for the Maven project Hierarchy.
+
+Build and Run the AccountDB as a *Service Container*. Also start the AccountService project either native or as a container.  
+
+
 
