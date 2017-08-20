@@ -24,6 +24,10 @@ Over the MicroNet Service Catalog add the *mn-archetype-simpleservice* to your g
 
 ![project-explorer](ProjectExplorer.PNG "Project Explorer showing a Service Project")
 
+> Tip: If you find that a Service Project contains way to many folders in the Project Explorer as I do :) add a new *Filter* via the *Drop Down* menu of the Project Explorer. Add "src, target, shared_contribution" as a Name filter patterns as shwon in the image below.
+
+![name-filter-patterns](NameFilterPatterns.PNG "Useful Name filter patterns")
+
 This class can be though of as the *Main Class* of the service and is used as an entrypoint to inject domain logic into the service. The Service created by the *mn-archetype-simpleservice* archetype is already prepared to be tested right away. Make shure ActiveMQ is running and start the container as a local Java application using the context menu action *Debug/RunServiceNative*. Observe the console as the service starts up and send itself a message. You can also perform a *Full Service Build* and start the service in a container but be shure to remove it afterwards via the Docker Explorer or you wont be able to start again due to a naming collision.
 
 > Note that at the moment it is not possible to locally run the same container twice for testing. This feature is planned to be added in the future. Meanwhile you can use Docker Swarm to deploy multiple instances of the same container using the *docker service* CLI.
