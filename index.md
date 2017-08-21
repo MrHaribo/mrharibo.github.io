@@ -6,8 +6,11 @@ The MicroNet **Core Framework** provides components to abstract the low level as
 
 The **MicroNet Tools** are a plug-in collection for the *Eclipse IDE*. The plug-ins provide a convenient way to develop the overall application behaviour of an application that is composed from multiple Microservices.
 
-- [Getting Started](gettingstarted/index.md)
-- [Example Game Tutorial](tutorial/index.md)
+- [Getting Started Tutorial](gettingstarted/index.md)
+  - [Installation](gettingstarted/index.md)
+  - [Basic Communication](communicationtutorial/index.md)
+  - [User Management](usermanagement/index.md)
+  - [Simple Example Game](tutorial/index.md)
 - [Quick Reference](quickreference/index.md)
 
 Be shure to fill out the [Evaluation Survey](https://docs.google.com/forms/d/e/1FAIpQLSc2mOMse_nsa6kJSQsRMN-ph_sUb4EDws9loc530sVPcMOOsg/viewform?usp=sf_link) after completing the Getting Started Tutorial.
