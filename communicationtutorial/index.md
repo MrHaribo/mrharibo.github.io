@@ -19,13 +19,13 @@ In this first step you will add ActiveMQ to your game workspace as a *Service Pr
 
 ![#service-catalog](ServiceCatalog.PNG "MicroNet Service Catalog")
 
-To test ActiveMQ find it in the service explorer and right click it to open the context menu. Execute the **Full Service Build** action and observe the build output in the console. If the build was successful you can start ActiveMQ via the context menu with the **Run Service Container** button.
+To test ActiveMQ find it in the Service Explorer view and right click it to open the context menu. Execute the **Full Service Build** action and observe the build output in the console. If the build was successful you can start ActiveMQ via the context menu with the **Run Service Container** button.
 
-> To verify that ActiveMQ is running you can use the Docker Explorer provided by the *Docker Tools for Eclipse* which can be found in the Eclipse marketplace. Once installed open the *Docker Explorer* view over *Window -> Show View -> Other -> Docker -> Docker Explorer*. In the Docker Explorer locate the ActiveMQ container and verify that it is running. The desired state is shown in the image below.
+> To verify that ActiveMQ is running you can use the **Docker Explorer** provided by the *Docker Tools for Eclipse* which can be found in the Eclipse marketplace. Once installed open the *Docker Explorer* view over *Window -> Show View -> Other -> Docker -> Docker Explorer*. In the Docker Explorer locate the ActiveMQ container and verify that it is running. The desired state is shown in the image below.
 
 ![docker-explorer](DockerExplorer.PNG "Docker Explorer from the Docker Tools for Eclipse")
 
-> You can also access the ActiveMQ *Web Console* with your browser to observe the state of ActiveMQ. The Web Console is avaibale under http://localhost:8161/admin/ and the deault username/password are "admin"/"admin". For production change the admin credentials in any case.
+> You can also access the ActiveMQ *Web Console* with your browser to observe the state of ActiveMQ. The Web Console is avaibale under http://localhost:8161/admin/ and the deault username/password are "admin"/"admin". For production change the admin credentials as explained in the [ActiveMQ Dockerhub Page](https://hub.docker.com/r/webcenter/activemq/).
 
 ## Creating a Loopback Service
 
