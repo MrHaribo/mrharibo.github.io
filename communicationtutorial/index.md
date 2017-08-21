@@ -1,4 +1,4 @@
-# Simple MicroNet Communication
+# Basic MicroNet Communication
 
 In this tutorial you tryout basic connectivity between Microservices using the default MessageBroker ActiveMQ.
 
