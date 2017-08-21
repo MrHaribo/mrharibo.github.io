@@ -32,25 +32,25 @@ The Login Process that MicroNet defines is aimed to be as simple as possible and
 7. The gateway service consumes the login response from the temporary queue.
 8. Upon login success the gateway adds a new player session to the session store, identified by the player connection.
 9. The gateway returns the login response to a temporary queue held open by the requesting player.
-10. The player consumes the login response from a temporary queue. Upon success he gains access to the game services (example sequence: A, B, C, D 5 , E).
+10. The player consumes the login response from a temporary queue. Upon success he gains access to the game services (example sequence: A, B, C, D, E).
 
 ## Session Store
 
-MicroNet uses [Couchbase](https://www.couchbase.com/) as a NoSQL database to provide Session Store capabilities. Think of the session store as a shared data storage used by your Microservices to persist data for a set amount of time or infiniely. The distibuted nature of Couchbase makes it possible to make often used session data highly available using eventual consistency concepts.
+MicroNet uses [Couchbase](https://www.couchbase.com/) as a NoSQL database to provide Session Store capabilities. Think of the session store as a shared data storage used by your Microservices to persist data for a set amount of time or infiniely. The distibuted nature of Couchbase makes it possible to make often used session data highly available among services using eventual consistency concepts.
 
-> Since usually multiple instance of a Microservices are deployed to achieve reliablilty Microservices are not allowed to store session data directly in memory. Instead the session store can be used persist data between request.
+> Since usually multiple instance of a Microservices are deployed to make Microservice applications reliablilty services not allowed to store session data directly in memory. Instead the session store must be used persist data between request. The result are stateless message transfers.
 
-Add the **mn-archetype-couchbase** archetype to your game workspace using the MicroNet Service Catalog. Perform a *Full Service Build* of the Couchbase Service Project from the Service Explorer and afterwards start Couchbase via *Start Serivce Container*.
+Add the **mn-archetype-couchbase** archetype to your game workspace using the MicroNet *Service Catalog*. Perform a *Full Service Build* of the Couchbase Service Project from the Service Explorer and afterwards start Couchbase via *Start Serivce Container* in the Service Explorer.
 
-> MicroNet uses a shell script called *wait-for-it.sh* to enshure that required services like activemq are avaible before starting a service. This however does not work for couchbase because the ports offered by couchbase are already open during initialization of couchbase and therefore starting couchbase simultaneously with any dependent container leads inevitabley to errors. It es therefore recommended to start couchbase prior to any other services to enshure availibility. If anyone finds a solution for this, please contact me.
+> Important: MicroNet uses a shell script called *wait-for-it.sh* to enshure that required services like activemq are avaible before starting dependent services. This however does not work for couchbase because the ports offered by couchbase are already open during initialization of couchbase and therefore starting couchbase simultaneously with any dependent container leads inevitably to errors. It is therefore recommended to start couchbase prior to any other services to enshure availibility. If anyone finds a solution for this timing issue, please contact me.
 
 ## Gateway Service
 
-The Gateway offers the API that is provided by the individual Microservices. Obviously this service introduces additional requirements to security because it has to be accessible from the outside, the Internet. Up until now all communications have been taking place in a private network not accessible by the outside. All services you introduce are automatically participants of this internal network and therefore all inter service communications are considered secure. To allow access to services that reside in the internal network, the API Gateway Service comes into play. For this porpose MicroNet provides a second public message broker which is considered unsecure. Generally everyone is allowed to connect to this public broker. The API Gateway then interconnects the two networks as a reverse proxy.
+The Gateway offers the API that is provided by the individual Microservices to the Users of the application. Obviously this service introduces additional security requirements since it has to be accessible from the outside world, the Internet. Up until now all communications have been taking place in a private network not accessible by the outside. All services you introduce are automatically participants of this internal network and therefore all inter service communication is considered secure. To allow external access to services that reside in the internal network, the API Gateway Service comes into play. To keep the internal network secure MicroNet introduces a second public message broker which is generally considered unsecure. Everyone is allowed to connect to this public broker but messages are only forwarded to the internal network on behalf of the API Gateway instances. The API Gateway is implemented as a reverse proxy.
 
-> This two message broker concept is not yet implemented in MicroNet. Also Encryption is a feature that is not yet provided by MicroNet at this stage. Also all passwords are stored in plain text. All these security aspects will be covered as soon as possible.
+> The two message broker concept is not yet implemented in MicroNet. Momentarily all connections go directly to the internal network which is unsecure. This is also the main reason why it is not advised to use MicroNet for production at it's current stage. Also Encryption is a feature that is not yet supported by MicroNet and also all passwords are stored in plain text. All these security aspects will be covered as soon as possible.
 
-Add the **mn-archetype-gatewayservice** to the game workspace and launch it. Observe how the Gateway Service connects to the Session Store to access User Information later.
+Add the **mn-archetype-gatewayservice** to the game workspace and launch it. Observe how the Gateway Service connects to the Session Store to access the *User Conections* Bucket.
 
 ## Account Service
 
@@ -58,7 +58,7 @@ The Account archetype is a Multi-Module Maven archetype and consists of two proj
 
 > Notice that choosing the acrifactId "Account" results in the Service projects: Account, AccountService, and AccountDB. The Account project it self is not used for anything but is required for the Maven project Hierarchy.
 
-Build and Run the AccountDB as a *Service Container*. Also start the AccountService project either *Native* or as a *Service Container*.
+Build and Run the AccountDB as a *Service Container* and start the AccountService project either *Native* or as a *Service Container*. In this case it is necessary to at least start the AccountDB simultaneously with the AccountService to prevent any timimng issues.
 
 ## Test Client
 
