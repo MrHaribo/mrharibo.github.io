@@ -33,9 +33,9 @@ The player voting communication flow (1,2,3,4 in the image):
   
 ## Player Session Management
 
-The design of the Example Game foresees that a player session is created for every player that connects to the game. A Player Service is responsible to provide an interface to access player session. Add the *mn-archetype-playerservice* to to the game workspace. Just like the GatewayService the PlayerService needs access to the session store. So make shure that couchbase is runnion before starting the PlayerService.
+The design of the Example Game foresees that a player session is created for every player that connects to the game. The Player Service is responsible to provide an interface to access player sessions. Add the *mn-archetype-playerservice* to to the game workspace. Just like the API Gateway Service the Player Service needs access to the session store. So make shure that Couchbase is runnion before you start the PlayerService.
 
-One thing that is left to do for the developer is to decide at what moment the player session is addes. The simplest possibility is to add the session right after a successful login. A place to do that is in the Login Service before sending the loging response. In the `onLogin` method add the required code to send a *mn://player/add* to the Player Service. The following code snipplet shows how the `onLogin` method looks like after the addition. 
+One thing that is left to do for the developer is to decide at what moment the player session is added to the session store. The simplest possibility is to add the session right after a successful login of a User. A place to do that is in the Login Service right before returning the loging response. In the `onLogin` method add the required code to send a message to the *mn://player/add* queue which is observed by the Player Service. The following code snipplet shows how the `onLogin` method looks like after the addition. 
 
 ```java
 @MessageListener(uri = "/login", desc="Attempt to log in a User.")
@@ -59,15 +59,15 @@ public Response onLogin(Context context, Request request) {
 ```
 ## Vote and Round Service
 
-Add the *mn-archetype-voteservice* and *mn-archetype-roundservice* to the game workspace. Start both services like any other service. With these two services the Simple Example Game is Complete.
+Add the *mn-archetype-voteservice* and *mn-archetype-roundservice* to the game workspace. Start both services like any other service. Both services have no additional requirement and are good to go. With these two services the Simple Example Game is Complete.
 
-> The Round Service is a little bit special since it has the requirement to be instantiated only once because the Round Control Events may only be broadcasted once. MicroNet does not yet provide a way to allow only one service instance so the developer is responsible to enshure this.
+> The Round Service is a little bit special since it has the requirement to be instantiated only once because the Round Control Events may only be broadcasted once. MicroNet does not yet provide a way to limit the number of service instances so the developer is responsible to enshure this.
 
 ## Testing the Simple Example Game
 
-To test the game you just developed start the TestClient like you did in the UserManagement tutorial. After the login you will periodically receive new Round updated and get the chance to place your vote. You can also log in with multiple client simultaneously and play against yourself by starting multiple TestClients.
+To test the game you just developed start the TestClient like you did before in the UserManagement tutorial. After a successful login you will periodically receive new Round updates and get the chance to place a vote. You can also log in with multiple client simultaneously and play against yourself by starting multiple TestClients.
 
-> Note that since the TestClient does not initially download the scoreboard you have to wait for 0-10 seconds for the game to react. This will be fixed in the future. 
+> Note that since the TestClient does not initially download the scoreboard after login so you have to wait for 0-10 seconds for the game to react. The game might appear frozen for a few seconds. This will be fixed in the future. 
 
 ## Whats Next
 
