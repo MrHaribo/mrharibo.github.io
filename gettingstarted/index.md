@@ -12,14 +12,14 @@
 - [Quick Reference](../quickreference/index.md)
 
 
-MicroNet itself does not require any installation but it requires both a **Docker Engine** and an **Eclipse IDE** installation on the developers host. MicroNet was developed with Microsoft Windows but is to work also in Linux, and MacOS. The MicroNet Tools however where only tested in Windows. 
+MicroNet itself does not require any installation but it requires both a **Docker Engine** and an **Eclipse IDE** installation on the developers host. MicroNet was developed with Microsoft Windows but also works under Linux, and MacOS. The MicroNet Tools however are only tested in Windows. 
 
 ## Docker Installation
 
-The most convenient way to install docker on a developer's computer is by using the **Docker Desktop** version which is available for *MacOS* and *Microsoft Windows 10*. On Linux a native docker installation can be used.  
+The most convenient way to use docker on a developer's computer is by installing the **Docker Desktop** version which is available for *MacOS* and *Microsoft Windows 10 Professional*. On Linux a native docker installation can be used.  
 
 ### Windows
-On Windows a Windows Pro version is required to use Docker Desktop because it requires **HyperV** to be enabled which is not possible on Windows Home Editions (see requirements in [Install Docker for Windows](https://docs.docker.com/docker-for-windows/install/)). If you have Windows 10 Pro, enable **HyperV** as explained in the Windows Documentation [Install Hyper-V on Windows 10](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v). Afterwards download and install the appropriate **Docker Desktop** client which can be found on the [Official Docker Installation Documentation](https://docs.docker.com/engine/installation/).
+On Windows a Windows Pro version is required to use Docker Desktop because it requires **HyperV** to be enabled which is not possible on Windows Home Editions (see requirements in [Install Docker for Windows](https://docs.docker.com/docker-for-windows/install/)). If you have Windows 10 Pro, enable **HyperV** as explained in the Windows documentation [Install Hyper-V on Windows 10](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v). Afterwards download and install the appropriate **Docker Desktop** client which can be found via the [Official Docker Installation Documentation](https://docs.docker.com/engine/installation/).
 
 If you don't have Windows 10 Pro the best alternative solution is to use the [Docker Toolbox](#docker-toolbox) as explained [below](#docker-toolbox). In any case test your docker installation using the for example the `docker info` command.
 
@@ -41,15 +41,19 @@ On Mac follow the official Docker [Installation Manual for MacOS](https://docs.d
 
 ### Docker Toolbox
 
-A fallback plan if none of the above solutions works is to use the **Docker Toolbox**. The Docker Toolbox uses *VirtualBox* as the virtualization technology which widely supportet. Docker Toolbox is also available on older operating systems. Use the [Official Documentation](https://docs.docker.com/toolbox/overview/) to learn how to install Docker Toolbox.
+A fallback plan if none of the above solutions work is to use **Docker Toolbox**. The Docker Toolbox uses *VirtualBox* as it's virtualization technology which widely supportet also on older operating systems. Use the [Official Docker Toolbox Documentation](https://docs.docker.com/toolbox/overview/) to learn how to install Docker Toolbox.
 
 ## Eclipse Installation
 
-An **Eclipse Oxygen** installation is required to use the MicroNet tools. It is recommended to download a new Eclipse Installation and use it solely for MicroNet because the MicroNet tools automatically synchronize specific files in the workspace which you do not want for projects other than MicroNet.
+An **Eclipse Oxygen** installation is required to use the MicroNet tools. It is recommended to download a new Eclipse Installation and use it solely for MicroNet because the MicroNet tools automatically synchronize specific files in the workspace. You dont want this behaviour for any other workspace than MicroNet workspaces.
 
-Download the *Eclipse IDE for Java Developers* from the [Eclipse Download Page](https://www.eclipse.org/downloads/eclipse-packages/) which is appropriate for your operating system. Be shure to download the packaged version of Eclipse and not the installer to enshure the separation of the Eclipse used by MicroNet to other Eclipse Installations. 
+Download the *Eclipse IDE for Java Developers* from the [Eclipse Download Page](https://www.eclipse.org/downloads/eclipse-packages/) which is appropriate for your operating system as shown in the image below. Be shure to download the **packaged version** of Eclipse and not the installer to enshure the separation of the Eclipse used by MicroNet to other Eclipse Installations. 
 
-> The Enterprise Edition of Eclipse (Eclipse IDE for Java EE Developers) is not required for MicroNet development and it is therefore not recommended to not overwhelm the developer with unused IDE funcionalities.
+![download-eclipse](EclipseInstallation.png "Download Eclipse")
+
+> The Enterprise Edition of Eclipse (Eclipse IDE for Java EE Developers) is not required for MicroNet development and it is therefore not recommended with the goal not to overwhelm the developer with unused IDE funcionalities.
+
+Extract the *eclipse* directory from the archive to you hard drive and start the contained eclipse executable. 
 
 ## MicroNet Tools Installation
 
