@@ -4,6 +4,7 @@
   - [Installation](../gettingstarted/index.md)
   - [Basic Communication](../communicationtutorial/index.md)
   - [User Management](../usermanagement/index.md)
+    - [Login Process Overview](#login-process-overview)
     - [Session Store](#session-store)
     - [Gateway Service](#gateway-service)
     - [Account Service](#account-service)
@@ -12,9 +13,26 @@
   - [Simple Example Game](../tutorial/index.md)
 - [Quick Reference](../quickreference/index.md)
 
-For Users to be able to connect to a MicroNet application the User Management Infrastructure needs to be available. This infrastructure consists of an API Gateway Service, an Account Service including a relational Account Database, and a Session Store using a NoSQL Database and of course ActiveMQ for networking. This sounds like a lot of stuff but MicroNet makes all these services and technologies available to you in a simple way using containers (Just like you installed ActiveMQ on your system in the last tutorial without even noticing).
+For Users to be able to connect to a MicroNet application the MicroNet *User Management* Infrastructure needs to be available. This infrastructure consists of an API Gateway Service, an Account Service including a relational Account Database, and a Session Store using a NoSQL Database and of course ActiveMQ for networking. This sounds like a lot of stuff but MicroNet makes all these services and technologies available to you in a simple way using containers (Just like you installed ActiveMQ on your system using a container).
 
-Make shure that the ActiveMQ container is running and remove all other running services from previous tutorials. 
+Make shure that the ActiveMQ container is running and remove all other running services from previous tutorials.
+
+## Login Process Overview
+
+The Login Process that MicroNet defines is aimed to be as simple as possible and is meant to be adjusted by the develop according to the needs of the a game application. The image below shows the login process along with all actors that take place in it.
+
+![login-process](PlayerSessions.png "MicroNet Login Process")
+
+1. The user sends a login request to the public broker.
+2. One API Gateway polls the message in a competing consumer fashion.
+3. The gateway forwards the login message to the internal broker using the mn://account/login queue.
+4. One Account Service polls the message in a competing consumer fashion.
+5. The Account Service authenticates the user using the Account Database.
+6. The account service returns the login response to a temporary queue held open by the responsible gateway.
+7. The gateway service consumes the login response from the temporary queue.
+8. Upon login success the gateway adds a new player session to the session store, identified by the player connection.
+9. The gateway returns the login response to a temporary queue held open by the requesting player.
+10. The player consumes the login response from a temporary queue. Upon success he gains access to the game services (example sequence: A, B, C, D 5 , E).
 
 ## Session Store
 
