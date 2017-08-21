@@ -97,7 +97,7 @@ Edit the game metadata according to the specification of your game and apply the
 
 ### Opening the MicroNet Views
 
-As a last step you need to display the MicroNet specific views. Open the *Window -> Show View -> Other* dialog and open all views listed under the *MicroNet* category. Also open the Docker Explorer under the *Docker* category.
+As a last step open all **MicroNet Views**. Open the *Window -> Show View -> Other* dialog and select all views listed under the *MicroNet* category. Also select the **Docker Explorer** under the *Docker* category. Confirm to open all views.
 
 ![#open-views](OpeningViews.PNG "Open the relevant views")
 
