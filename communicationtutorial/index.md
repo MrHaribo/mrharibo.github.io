@@ -1,7 +1,7 @@
 # Basic MicroNet Communication
 
 - [Getting Started Tutorial](../index.md)
-  - [Installation](index.md)
+  - [Installation](../gettingstarted/index.md)
   - [Basic Communication](../communicationtutorial/index.md)
     - [Adding ActiveMQ](#adding-activemq)
     - [Creating a Loopback Service](#creating-a-loopback-service)
