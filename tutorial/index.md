@@ -12,6 +12,24 @@
 - [Quick Reference](../quickreference/index.md)
 
 In this last step of MicroNet Getting Statred Tutorials you will add game functionality to build a complete game. The example game is very simple example game application but gives a good overview how to develop games with MicroNet. The example game is played in rounds of 10 seconds where each player can submit a guess and gets points based on the proximity to a random number guessed by the game application. A score ranking of all players is presented to the player in the TestClient.
+
+The communication flow of a game session with the Simple Example game is shown in the image below.
+
+![sample-game](SampleGame.png "Communication of the Example Game")
+
+The game round control communication flow (A,B,C,D in the image):
+
+A. The round service broadcasts a new round event. The new round event contains the guessed number for the next round.
+B1. All voting services receive the new round event and store the next guess number in memory.
+B2. One player service receives the new round event to issue a score broadcast. The scores of all players are available through the session store.
+C. The player service which has received the new round event broadcasts a score update event to all participating players.
+D. Each player receives the score update and updates his scoreboard accordingly. 
+
+The player voting communication flow (1,2,3,4 in the image):
+1. The player sends his vote to the game application.
+2. The voting service instances compete for the vote messages.
+3. The processing voting service instance sends a score update message to an arbitrary player service.
+4. The processing player service persists the vote using the session store.
   
 ## Player Session Management
 
