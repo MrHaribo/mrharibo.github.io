@@ -57,7 +57,7 @@ Extract the *eclipse* directory from the archive to you hard drive and start the
 
 ## MicroNet Tools Installation
 
-Inside Eclipse open the *Help -> Install New Software...* dialog. Press the *Add...* button in the top section to add a new Update Site to this Eclipse Installation. Enter *MicroNet* as a name and add *https://mrharibo.github.io/updatesite/* as location. With the MicroNet update site selected select and install the MicroNet plug-in. This plug-in contains all MicroNet Tools.
+Once Eclipse is open, navigate to the *Help -> Install New Software...* dialog. Press the *Add...* button in the top right to add a new Update Site to this Eclipse Installation. Enter *MicroNet* as name and add *https://mrharibo.github.io/updatesite/* as location. Choose the MicroNet update site from the "Work with:" dropdown and install the MicroNet plug-in. This plug-in contains all MicroNet Tools.
 
 > Sometimes the MicroNet category is not shown and the check box *Group items by category* must be deselected for MicroNet to show up as indicated in the image below.
 
@@ -65,7 +65,9 @@ Inside Eclipse open the *Help -> Install New Software...* dialog. Press the *Add
 
 ### Install Docker Toolbox
 
-Although not required it is recommended to install the Docker Tools for Eclipse. The Docker Tools are a handy collection of visual tools that ease the management of the Docker Engine. The Eclipse Docker Tools can be installed via the Eclipse Marketplace under *Help -> Eclipse Marketplace...*. Just type "Docker Tools" in the search field. 
+Although not mandatory it is recommended to install the *Docker Tools for Eclipse*. The Docker Tools are a handy collection of visual tools that make the management of the Docker Engine more comfortable. The Eclipse Docker Tools can be installed via the Eclipse Marketplace under *Help -> Eclipse Marketplace...*. Just enter "Docker Tools" in the search field as shown in the image below.
+
+![install-eclipse-docker-tools](EclipseDockerTools.PNG "Eclipse Docker Tools Installation")
 
 ## Workspace Setup
 
