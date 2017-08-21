@@ -11,7 +11,7 @@
   - [Simple Example Game](../tutorial/index.md)
 - [Quick Reference](../quickreference/index.md)
 
-In this tutorial you tryout basic connectivity between Microservices using the default MessageBroker ActiveMQ.
+In this tutorial you try out basic connectivity between Microservices using the default MessageBroker ActiveMQ. It is assumed that you have the *Docker Engine* and *Eclipse IDE* installed and performed all necessary workspace modifications as explained on page [Installation](../gettingstarted/index.md).
 
 ## Adding ActiveMQ
 
