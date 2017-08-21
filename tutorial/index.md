@@ -4,11 +4,11 @@
   - [Installation](../gettingstarted/index.md)
   - [Basic Communication](../communicationtutorial/index.md)
   - [User Management](../usermanagement/index.md)
+  - [Simple Example Game](../tutorial/index.md)
     - [Player Session Management](#player-session-management)
     - [Vote and Round Service](#vote-and-round-service)
     - [Testing the Simple Example Game](#testing-the-simple-example-game)
     - [Whats Next](#whats-next)
-  - [Simple Example Game](../tutorial/index.md)
 - [Quick Reference](../quickreference/index.md)
 
 In this last step of MicroNet Getting Statred Tutorials you will add game functionality to build a complete game. The example game is very simple example game application but gives a good overview how to develop games with MicroNet. The example game is played in rounds of 10 seconds where each player can submit a guess and gets points based on the proximity to a random number guessed by the game application. A score ranking of all players is presented to the player in the TestClient.
