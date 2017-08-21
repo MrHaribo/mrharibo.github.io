@@ -1,10 +1,6 @@
 # MicroNet Quick Reference
 
 - [Getting Started Tutorial](../index.md)
-  - [Installation](../gettingstarted/index.md)
-  - [Basic Communication](../communicationtutorial/index.md)
-  - [User Management](../usermanagement/index.md)
-  - [Simple Example Game](../tutorial/index.md)
 - [Quick Reference](index.md)
   - [Shared Model](#shared-model)
   - [Parameter Codes](#parameter-codes)
