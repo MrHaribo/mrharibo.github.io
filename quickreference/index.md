@@ -13,11 +13,6 @@
 
 Besides the core Functionality MicroNet provides additional functionality to ease the process of online game development. These concepts are mainly aimed to deal with the complex Microservice topics composition and deployment.
 
-* [MicroNet Documentation](../index.md)
-  * [Getting Started](../gettingstarted/index.md)
-  * [Example Game Tutorial](../tutorial/index.md)
-  * [Quick Reference](./index.md)
-
 ## Shared Model
 
 The main concept behind the composition of a MicroNet application is to use platform independent Shared Model to define datatypes for message transfers and persistence. This concept allows Microservices to use domain objects in a type-safe way neclecting shared game agnostic libraries between services. The developer can define template types which represent the game objects of the game and MicroNet automatically generates POJOS out of the model. This follows the define once use anywhere approach.
