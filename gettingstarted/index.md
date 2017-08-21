@@ -71,7 +71,7 @@ Although not mandatory it is recommended to install the *Docker Tools for Eclips
 
 ## Workspace Setup
 
-When you open Eclipse you will be prompted for a *Workspace Directory*. Every Game developed with MicroNet needs it's own Workspace Directory. You can use the same MicroNet Eclipse installation for multiple games by using different workspaces for each game. In this tutorial a directory called "MyGame" will be used as Workspace Directory.
+When you open Eclipse you will be prompted a *Workspace Directory*. Every Game developed with MicroNet needs it's own workspace directory referred to as the **Game Workspace**. You can use the same MicroNet Eclipse installation to develop multiple games by using a different workspace for each game. In this tutorial the Game Workspace directory will be "/MyGame".
 
 ### MicroNet Settings
 
@@ -81,22 +81,26 @@ The worspace of a game contains a set of metadata wich is automatically generate
 
 #### Docker Settings
 
-Use the Docker Settings section to test if your Docker installation works properly with MicroNet. If you are using Docker Desktop everything should work right away and you can verify that by pressing the *Test Docker* button. If you are using Docker Toolbox specify the Docker Toolbox installation directory and also test your Docker Installation.
+Use the Docker Settings section to test if your Docker installation works correctly with MicroNet. If you are using Docker Desktop everything should work right away and you can verify that by pressing the *Test Docker* button. If you are using Docker Toolbox specify the Docker Toolbox installation directory and also test your Docker Installation. Check the *use Docker Toolbox* checkbox accordingly.
 
 #### Application Docker Network
 
-To enshure connectivity among Microservices a custom Docker Network must be created. It is recommended to use a separate network for all games that are developed in parallel to enshure game isolation. Enter a name for the network and press *Create Network*. Test your network right afterwards with the *Test Network* button. You can also use a Docker Network that was created in advance but be shure to test it. In this tutorial *mn_bridge_network* will be used as the network name.
+To enshure connectivity among Microservices a custom Docker Network must be created. It is recommended to use a separate network for all games that are developed in parallel to enshure game isolation. Enter a name for the network and press *Create Network*. Test your network right afterwards with the *Test Network* button. You can also use a Docker Network that was created in advance but be shure to test it. In this tutorial "mn_bridge_network" will be used as the network name.
 
 #### Application Workspace
 
-The workspace of a game itself is a Maven project and the projects within the workspace are children of the parent Maven project and represent the Microservices of the application. This actuality is used to build the complete game application in one go. Edit the metadata according to the game you want to develop and apply the changes using the *Apply Application Pom Metadata* button. The changes are automatically flushed to disk. In this tutorial *MyGame* will be used as groupId, *MyGameApp* will be used as artifactId, and *0.0.1-SNAPSHOT* will be used as version.
+The workspace of a game itself is a Maven project (containing a pom.xml) and the projects within the workspace are children of this parent Maven project and represent the Microservices of the application. The parent pom.xml is used to build the complete game application in one swipe.
 
-> Be advised that in the current version 0.1.0 of MicroNet the projects changes to the parent metadata are not updated in in the child projects of the services. Momentarily it is best to define the game Metadata once and leave it unchanged. In case of a change the child pom's need to be updated manually. This feature is planned for the future. 
+Edit the game metadata according to the specification of your game and apply the changes using the *Apply Application Pom Metadata* button to automatically store the metadata in the parent pom.xml. In this tutorial *MyGame* will be used as groupId, *MyGameApp* will be used as artifactId, and *0.0.1-SNAPSHOT* will be used as version.
+
+> Be advised that in the current version 0.1.0 of MicroNet, changes to the parent pom.xml are not updated in in the pom.xml files in child projects (service projects). Momentarily it is best to define the game Metadata once and leave it unchanged. In the rare case a change is necessary the child pom's need to be updated by hand. Automation for this is planned for the future. 
 
 ### Opening the MicroNet Views
 
-As a last step you need to display the MicroNet specific views. Open the *Window -> Show View -> Other* dialog and open all views listed under the MicroNet category.
+As a last step you need to display the MicroNet specific views. Open the *Window -> Show View -> Other* dialog and open all views listed under the *MicroNet* category. Also open the Docker Explorer under the *Docker* category.
+
+![#open-views](OpeningViews.PNG "Open the relevant views")
 
 ## Whats Next
 
-If you yould successfully complete the previous steps you are ready to build your first game using MicroNet. Read on in the [Example Game Tutorial](../tutorial/index.md) Page.
+If you yould successfully complete the previous steps you completed the installation process and are ready to start developing your first MicroNet application. Continue with the [Basic Communication](../communicationtutorial/index.md) Tutorial.
