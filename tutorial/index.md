@@ -19,11 +19,11 @@ The communication flow of a game session with the Simple Example game is shown i
 
 The game round control communication flow (A,B,C,D in the image):
 
-A. The round service broadcasts a new round event. The new round event contains the guessed number for the next round.
-B1. All voting services receive the new round event and store the next guess number in memory.
-B2. One player service receives the new round event to issue a score broadcast. The scores of all players are available through the session store.
-C. The player service which has received the new round event broadcasts a score update event to all participating players.
-D. Each player receives the score update and updates his scoreboard accordingly. 
+- A. The round service broadcasts a new round event. The new round event contains the guessed number for the next round.
+- B1. All voting services receive the new round event and store the next guess number in memory.
+- B2. One player service receives the new round event to issue a score broadcast. The scores of all players are available through the session store.
+- C. The player service which has received the new round event broadcasts a score update event to all participating players.
+- D. Each player receives the score update and updates his scoreboard accordingly. 
 
 The player voting communication flow (1,2,3,4 in the image):
 1. The player sends his vote to the game application.
