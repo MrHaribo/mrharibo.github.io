@@ -37,22 +37,40 @@ Use the MicroNet Service Catalog add the *mn-archetype-simpleservice* to your ga
 
 ![project-explorer](ProjectExplorer.PNG "Project Explorer showing a Service Project")
 
+This class can be though of as the *Main Class* of the service and is used as an entrypoint to inject domain logic into the service. The Service created by the *mn-archetype-simpleservice* archetype is already prepared to be tested right away. Make shure ActiveMQ is running and start the container as a local Java application using the context menu action *Debug/RunServiceNative* in the Service Explorer as shwon in the image below. Observe the console as the service starts up and send itself a message. You can also perform a *Full Service Build* and start the service in a container but be shure to remove it afterwards via the Docker Explorer or you wont be able to start again due to a naming collision.
+
+![service-debugging](ServiceDebugging.png "Debugging a MicroNet Service")
+
+> Note that at the moment it is not possible to locally run the same container twice for testing. This feature is planned to be added in the future. Meanwhile you can use Docker Swarm to deploy multiple instances of the same container using the *docker service* CLI.
+
 > Tip: If you think a Service Project shows way to many folders in the Project Explorer as I do :) add a new *Filter* via the *Drop Down* menu of the Project Explorer. Add "src, target, shared_contribution" as Name filter patterns as shwon in the image below. You can also check the *Libraries from external* checkbox for exclude but to the library folders are sometimes useful.
 
 ![name-filter-pattern](NameFilterPatterns.PNG "Useful Name filter patterns")
 
-This class can be though of as the *Main Class* of the service and is used as an entrypoint to inject domain logic into the service. The Service created by the *mn-archetype-simpleservice* archetype is already prepared to be tested right away. Make shure ActiveMQ is running and start the container as a local Java application using the context menu action *Debug/RunServiceNative*. Observe the console as the service starts up and send itself a message. You can also perform a *Full Service Build* and start the service in a container but be shure to remove it afterwards via the Docker Explorer or you wont be able to start again due to a naming collision.
-
-> Note that at the moment it is not possible to locally run the same container twice for testing. This feature is planned to be added in the future. Meanwhile you can use Docker Swarm to deploy multiple instances of the same container using the *docker service* CLI.
-
 ## Adding a Communication Partner
 
-One service of course does not make up a very interessting distributed application so we spice thing up a little by adding a communication partner for our lonely *FooService*. But before we do that, we need to enshure that we give FooService a proper address to it can be accessed by other services or later by the users of the application. In the Main Class of FooService edit the `@MessageService` annotation and enter a valid URI like for example "mn://foo". The protocol portion "mn://" of the URI is required for a service to be recognized by a MicroNet application. Also in the ServiceFoo class remove the 
+One service of course does not make up a very interessting distributed application so we spice thing up a little by adding a communication partner for our lonely *FooService*. But before we do that, we need to enshure that we give FooService a proper address so it can be found by other services or later by the users of the application. In the Main Class of FooService edit the `@MessageService` annotation and enter a valid URI like for example "mn://foo". The protocol portion "mn://" of the URI is required for a service to be recognized by a MicroNet application. Also in the ServiceFoo class remove the 
 
 ```java
 context.sendRequest("mn://my_service/hello/world/handler", new Request("Hello"));
 ``` 
-call from the start method since the service "mn://my_service" no longer exists.
+call from the start method since the service "mn://my_service" no longer exists. In the end the FooService should look like this:
+
+```java
+@MessageService(uri = "mn://foo")
+public class FooService {
+	
+	@OnStart
+	public void onStart(Context context) {
+		System.out.println("FooService Start Routine...");
+	}
+	
+	@MessageListener(uri="/hello/world/handler")
+	public void helloHandler(Context context, Request request) {
+		System.out.println(request.getData() + " World MicroNet...");
+	}
+}
+```
 
 Now add another *mn-archetype-simpleservice* archetype project to your game workspace and name the artifactId **BarService**. In the Main Class of the BarService change the `@MessageService` and enter a valid URI for the service for example "mn://bar". Change the call in the BarService Main Class from 
 
@@ -66,8 +84,22 @@ to
 context.sendRequest("mn://foo/hello/world/handler", new Request("Hello from Bar"));
 ```
 
-To test the communication between the service first enshure that no old service instances are running to interfere with our new services. Check this on the Debug View in the Java Debug Perspective and in the container folder in the Docker Explorer. You can leave ActiveMQ running because we still need it. Using your prefered method start both services. The order does not matter since messages are buffered by ActiveMQ and delivered as soon as a service is available. Observe the Console of both services to see if the communication was successful.
+You can also remove the `helloHandler` method from the BarService to keep it clean (Microservice style). The resulting BarService should look like this:
+
+```java
+@MessageService(uri = "mn://bar")
+public class BarService {
+	
+	@OnStart
+	public void onStart(Context context) {
+		System.out.println("BarService Start Routine...");
+		context.sendRequest("mn://foo/hello/world/handler", new Request("Hello from Bar"));
+	}
+}
+```
+
+To test the communication between the two services you must first enshure that no old service instances are running to interfere with our new services. Check this on the *Debug View* in the Java *Debug Perspective* and in the container section in the *Docker Explorer*. You can leave ActiveMQ running because we still need it. After cleaning start both services Using your prefered method. The order does not matter since the message that is sent by BarService buffered by ActiveMQ and is delivered as soon as FooService is available. Observe the Console of both services to see if the communication was successful.
 
 ## Whats Next
 
-Now that you have a simple service communication running it is time to move on to a more concrete example to learn how to work with MicroNet to build more complex applications especially online games. Move on to the [User Management Tutorial](../usermanagement/index.md) Tutorial.
+Now that you could establish a simple service communication you can add more complex features to you Game Workspace. Move on to the [User Management Tutorial](../usermanagement/index.md) Tutorial.
