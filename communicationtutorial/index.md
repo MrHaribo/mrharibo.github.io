@@ -11,11 +11,13 @@
   - [Simple Example Game](../tutorial/index.md)
 - [Quick Reference](../quickreference/index.md)
 
-In this tutorial you try out basic connectivity between Microservices using the default MessageBroker ActiveMQ. It is assumed that you have the *Docker Engine* and *Eclipse IDE* installed and performed all necessary workspace modifications as explained on page [Installation](../gettingstarted/index.md).
+In this tutorial you try out basic connectivity between Microservices using the default MessageBroker ActiveMQ. It is assumed that you have the *Docker Engine* and *Eclipse IDE* installed and have performed all necessary workspace modifications as explained on page [Installation](../gettingstarted/index.md).
 
 ## Adding ActiveMQ
 
-In this first step you will add ActiveMQ to your game workspace. Open the *New Project* dialog via the *Project Explorer* or the *File* menu. In the dialog select *Maven -> Maven Project* and press next until the archetype selection page. Select the MicroNet Archetype Catalog and choose the *mn-archetype-activemq* archetype. Press next and edit the metadata of the ActiveMQ project. The artifactId can be chosen arbitrary but the groupId should match the groupId from the game workspace metadata. Press finish to create the project.
+In this first step you will add ActiveMQ to your game workspace as a *Service Project*. Open the *New Project* dialog via the *Project Explorer* or the *File* menu. In the dialog select *Maven -> Maven Project* and press next twice to display the archetype selection page. Select the MicroNet Archetype Catalog and choose the *mn-archetype-activemq* archetype as shown in the image below. Press next and edit the metadata of the ActiveMQ project. The artifactId can be chosen arbitrary but the groupId should match the groupId in the Game Workspace metadata. Press finish to create the project.
+
+![#service-catalog](ServiceCatalog.PNG "MicroNet Service Catalog")
 
 To test ActiveMQ find it in the service explorer and right click it to open the context menu. Execute the **Full Service Build** action and observe the build output in the console. If the build was successful you can start ActiveMQ via the context menu with the **Run Service Container** button.
 
