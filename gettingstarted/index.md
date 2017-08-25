@@ -91,11 +91,13 @@ To ensure connectivity among Microservices a custom Docker Network must be creat
 
 #### Application Workspace
 
-The workspace of a game itself is a Maven project (containing a pom.xml) and the projects within the workspace are children of this parent Maven project and represent the (M/m)icroservices??? of the application. The parent pom.xml is used to build the complete game application in one swipe.
+The workspace of a game itself is a Maven project (containing a pom.xml) and the projects within the workspace are children of this parent Maven project and represent the Microservices of the application. The parent pom.xml is used to build the complete game application in one swipe.
 
-Edit the game metadata according to the specification of your game and apply the changes using the *Apply Application Pom Metadata* button to automatically store the metadata in the parent pom.xml. In this tutorial *MyGame* will be used as the groupId, *MyGameApp* will be used as the artifactId, and *0.0.1-SNAPSHOT* will be used as the version.
+Edit the game metadata according to the specification of your game and apply the changes using the *Apply* button to automatically store the metadata in the parent pom.xml. In this tutorial *MyGame* will be used as the groupId, *MyGameApp* will be used as the artifactId, and *0.0.1-SNAPSHOT* will be used as the version.
 
-> Be advised that in the current version 0.1.0 of MicroNet, changes to the parent pom.xml are not updated in the pom.xml files in child projects (service projects). Momentarily it is best to define the game Metadata once and leave it unchanged. In the rare case a change is necessary the child pom's need to be updated by hand. Automation for this is planned for the future. 
+> Be advised that in the current version of MicroNet, changes to the parent pom.xml are not updated in the pom.xml files in child projects (service projects). Momentarily it is best to define the game Metadata once and leave it unchanged. In the rare case a change is necessary the child pom's need to be updated by hand. Automation for this is planned for the future.
+
+> MicroNet will attempt to synchronize the parent pom.xml file automatically. If this process fails enexpectedly the parent pom.xml can become corrupted. In this case the developer has to "repair" by manually entering the matadata in the pom.xml located in the workspace root. Once repaired the automatical synchronization should work again.
 
 ### Opening the MicroNet Views
 
