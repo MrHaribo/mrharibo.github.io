@@ -83,6 +83,10 @@ After installation make shure that the Eclipse Docker Tools are able to connect 
 
 When you open Eclipse you will be prompted a *Workspace Directory*. Every Game developed with MicroNet needs it's own workspace directory referred to as the **Game Workspace**. You can use the same MicroNet Eclipse installation to develop multiple games by using a different workspace for each game. In this tutorial the Game Workspace directory will be "/MyGame".
 
+### Adding a Java 8 JDK
+
+MicroNet requires a JDK version of 1.8.X or higher. If you dont have a JDK installed on your computer download the Java 8 JDK fom the [Official Java Download Page](http://www.oracle.com/technetwork/java/javase/downloads/index.html). Open the Preferences Window via *Window -> Preferences* and select the *Java -> Installed JREs* Preference Page. Select your Java 8 JDK and make sure to set it as default JRE.
+
 ### MicroNet Settings
 
 The worspace of a game contains a set of metadata that is automatically generated when the workspace is opened for the first time. The first step after opening the workspace should be to configure the generated metadata according to the game you want to develop. Open the MicroNet global preference page under *Window -> Preferences -> MicroNet*.
