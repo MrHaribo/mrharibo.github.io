@@ -18,10 +18,13 @@ MicroNet itself does not require any installation but it requires both a **Docke
 
 The most convenient way to use docker on a developer's computer is by installing the **Docker Desktop** version which is available for *MacOS* and *Microsoft Windows 10 Professional*. On Linux a native docker installation can be used.  
 
-### Windows
-On Windows a Windows Pro version is required to use Docker Desktop because it requires **HyperV** to be enabled which is not possible on Windows Home Editions (see requirements in [Install Docker for Windows](https://docs.docker.com/docker-for-windows/install/)). If you have Windows 10 Pro, enable **HyperV** as explained in the Windows documentation [Install Hyper-V on Windows 10](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v). Afterwards download and install the appropriate **Docker Desktop** client which can be found via the [Official Docker Installation Documentation](https://docs.docker.com/engine/installation/).
+### Windows 10
+A Windows **Pro** version is required to use Docker Desktop because it requires **HyperV** to be enabled which is not possible on Windows Home Editions (see requirements in [Install Docker for Windows](https://docs.docker.com/docker-for-windows/install/)). If you have Windows 10 Pro, enable **HyperV** as explained in the Windows documentation [Install Hyper-V on Windows 10](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v). Afterwards download and install the appropriate **Docker Desktop** client which can be found via the [Official Docker Installation Documentation](https://docs.docker.com/engine/installation/).
 
 If you don't have Windows 10 Pro the best alternative solution is to use the [Docker Toolbox](#docker-toolbox) as explained [below](#docker-toolbox). In any case test your docker installation by using the `docker info` command.
+
+### Other Windows Versions
+Older Windows versions or Windows 10 Home versions have to use Docker Toolbox as explained [below](#docker-toolbox).
 
 ### Linux
 
