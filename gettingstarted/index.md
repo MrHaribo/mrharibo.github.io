@@ -91,7 +91,7 @@ The worspace of a game contains a set of metadata that is automatically generate
 
 #### Docker Settings
 
-Use the Docker Settings section to test if your Docker installation works correctly with MicroNet. If you are using Docker Desktop everything should work right away and you can verify that by pressing the *Test Docker* button. If you are using Docker Toolbox specify the Docker Toolbox installation directory and also test your Docker Installation. Check the *use Docker Toolbox* checkbox accordingly.
+Use the Docker Settings section to test if your Docker installation works correctly with MicroNet. If you are using Docker Desktop everything should work right away (assuming that *docker* command is available on the environment) and you can verify that by pressing the *Test Docker* button. If you are using Docker Toolbox specify the Docker Toolbox installation directory and also test your Docker Installation. Check the *use Docker Toolbox* checkbox accordingly.
 
 > The Docker Toolbox Directory should point to the directory of the Docker Toolbox installation containing the *docker* and *docker-compose* executables.
 
