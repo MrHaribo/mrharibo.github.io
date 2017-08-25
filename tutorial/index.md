@@ -11,7 +11,7 @@
     - [Whats Next](#whats-next)
 - [Quick Reference](../quickreference/index.md)
 
-In the last step of the MicroNet Getting Statred Tutorials you will add game functionality to build a complete game. The example game is a very simple example game application but gives a good overview over how to develop games with MicroNet. The example game is played in rounds of 10 seconds where each player can submit a guess and gets points based on the proximity to a random number generated??? by the game application. A score ranking of all players is presented to the player in the TestClient.
+In the last step of the MicroNet Getting Statred Tutorials you will add game functionality to build a complete game. The example game is a very simple example game application but gives a good overview over how to develop games with MicroNet. The example game is played in rounds of 10 seconds where each player can submit a guess and gets points based on the proximity to a random number which is guessed by the game application. A score ranking of all players is presented to the player in the TestClient.
 
 The communication flow of a game session with the Simple Example game is shown in the image below.
 
