@@ -50,9 +50,13 @@ public Response onLogin(Context context, Request request) {
 	if (!credentials.getPassword().equals(user.getCredentials().getPassword()))
 		return new Response(StatusCode.UNAUTHORIZED);
 
+	//>>>>>>>>>>>>>>>>>>>>> ADD THIS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 	Request addPlayerRequest = new Request(credentials.getUsername());
 	addPlayerRequest.getParameters().set(ParameterCode.USER_ID, user.getId());
 	context.sendRequest("mn://player/add", addPlayerRequest);
+	
+	//>>>>>>>>>>>>>>>>>>>>> UNTIL HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 	return new Response(StatusCode.OK, Integer.toString(user.getId()));
 }
