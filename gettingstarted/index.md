@@ -34,13 +34,13 @@ On Linux choose the appropriate installation guide for your Linux opperating sys
 [CentOS](https://docs.docker.com/engine/installation/linux/docker-ce/centos/), or
 [Fedora](https://docs.docker.com/engine/installation/linux/docker-ce/fedora/).
 
-> MicroNet has not been tested on Linux Operating Systems 
+> MicroNet has not been tested intensively on Linux Operating Systems 
 
 ### MacOS
 
 On Mac follow the official Docker [Installation Manual for MacOS](https://docs.docker.com/docker-for-mac/install/).
 
-> MicroNet has not been tested on MacOS
+> MicroNet has not been tested intensively on MacOS
 
 ### Docker Toolbox
 
