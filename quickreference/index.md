@@ -11,7 +11,7 @@ Besides the core Functionality MicroNet provides additional functionality to eas
 
 ## Shared Model
 
-The main concept behind the composition of a MicroNet application is to use platform independent Shared Model to define datatypes for message transfers and persistence. This concept allows Microservices to use domain objects in a type-safe way neclecting shared game agnostic libraries between services. The developer can define template types which represent the game objects of the game and MicroNet automatically generates POJOS out of the model. This follows the define once use anywhere approach.
+The main concept behind the composition of a MicroNet application is to use platform independent Shared Model to define datatypes for message transfers and persistence. This concept allows Microservices to use domain objects in a type-safe way neclecting shared game agnostic libraries between services. The developer can define template types which represent the game objects of the game and MicroNet automatically generates POJOS out of the model. This follows the define once, use anywhere approach.
 
 The shared model also features model contribution. Archetypes from the service catalog can define template types which they depend on. These required templates are then automatically contributed to the shared model when the service archetype is added. If you followed the getting started tutorial this process already happened multiple times since several model templaes have been added to the shared model already like `UserValues` for example. The image below shows the Model View for the Simple Example Game. With the Template Tree the Model View provides a way to edit the Shared Model in a convenient way. It is possible to add, remove, and edit templates. 
 
@@ -19,13 +19,13 @@ The shared model also features model contribution. Archetypes from the service c
 
 ### Prefab Tree
 
-Prefabs are instances of template objects. Prefabs can be created from model templates and can be organized to a hierarchy of entities. The idea of prefabs is that they can be edited by the designer and then diretly stored in a database to be used at runtime. Prefabs are also planned to implement an observer pattern on object level. This approach will allow to use reactive programming on a basis of object change notification either for complite objects or for very fine grained access on individual variables of a prefab.
+Prefabs are instances of template objects. Prefabs can be created from model templates and can be organized to a hierarchy of entities. The idea of prefabs is that they can be edited by the designer and then diretly stored in a database to be used at runtime. Prefabs are also planned to implement an observer pattern on object level. This approach will allow the use of reactive programming on a basis of object change notification either for complete objects or for very fine grained access on individual variables of a prefab.
 
-> At this point prefabs are only experimental and are not used for anything yet. 
+> At this point prefabs are only experimental and are not used for anything. 
 
 ## Parameter Codes
 
-A MicroNet message transfer can be augmented by adding parameters to a message. Each parameter of a message is identified by a ParameterCode. The ParameterCodes are global for the whole game application. The following snipplet shows how to add and get Parameters to a from and to a message.
+A MicroNet message transfer can be augmented by adding parameters to a message. Each parameter of a message is identified by a ParameterCode. The ParameterCodes are global for the whole game application. The following snipplet shows how to add and get parameters from and to a message.
 
 ```java
 		Request request = new Request();
@@ -33,7 +33,7 @@ A MicroNet message transfer can be augmented by adding parameters to a message. 
 		int userID = request.getParameters().getInt(ParameterCode.USER_ID);
 ```
 
-The Parameter Codes of the game application can be edited via the *ParameterCode View*. It is possible to to add and remove ParameterCodes. It is also shown in the ParameterCode View which codes are used by which service. Just like Model Templates, required ParameterCodes are contributed to the game workspace when a service is added. The ParameterCode View always contains the three buit in codes: USER_ID, USER_REQUEST, and EVENT. These three codes are used by the framework and cannot be removed.
+The Parameter Codes of the game application can be edited via the *ParameterCode View*. It is possible to add and remove ParameterCodes. It is also shown in the ParameterCode View which codes are used by which service. Just like Model Templates, required ParameterCodes are contributed to the game workspace when a service is added. The ParameterCode View always contains the three buit in codes: USER_ID, USER_REQUEST, and EVENT. These three codes are used by the framework and cannot be removed.
 
 The image below shows the ParameterCode View for the Simple Example Game. No additional Parameters are used in this example.
 
@@ -45,17 +45,17 @@ MicroNet achieves loose coupling of services by sharing the API in a platform in
 
 ### Documenting the Shared API with Annotations
 
-In addition to the mandatory `@MessageService` and `@MessageListener` annotation MicroNet provides additional optional annotations to document the API for quick access in other services.
+In addition to the mandatory `@MessageService` and `@MessageListener` annotation, MicroNet provides additional optional annotations to document the API for quick access in other services.
 
 The `@RequestPayload` and `@ResponsePayload` annotations document the type of the message payload. This can be a primitive type or a model type from the Shared Model. Types which are not part of the shared model cannot be used as message payload.
 
 The `@RequestParameters` and `@ResponseParameters` annotations allow to define an array of `@MessageParameter` annotations. Each message parameter must be defined by a ParameterCode along with the class of the payload type.
 
-Generally all MicroNet annotations support a description field to document the functionality of the Shared API in humand readable form. 
+Generally all MicroNet annotations support a description field to document the functionality of the Shared API in a human readable form. 
 
 ### Accessing the Shared API with Code Assist
 
-Once API annotations exist, MicroNet uses this information to present the API to the developer. The complete API is presented in a hierarchical fashion starting with the available services. To test this feature type "mn://" somewhere in code and press Ctrl+Space to open the Eclipse Content Assist. You will notice that the full service proposal that is documented is available. The image below shows MicroNet Code Assist in action.
+Once API annotations exist, MicroNet uses this information to present the API to the developer. The complete API is presented in a hierarchical fashion starting with the available services. To test this feature type "mn://" somewhere in a source code and press Ctrl+Space to open the Eclipse Content Assist. You will notice that the full service proposal that is documented is available. The image below shows MicroNet Code Assist in action.
 
 ![content-assist](CodeAssist.png "MicroNet Content Assist")
 
