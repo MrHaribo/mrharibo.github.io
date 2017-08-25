@@ -114,7 +114,7 @@ Open the Preferences Dialog via *Window -> Preferences* and select the *Maven ->
 - **MicroNet:** https://mrharibo.github.io/catalog/archetype-catalog.xml
 - **MicroNet Examples:** https://mrharibo.github.io/catalog/example-archetype-catalog.xml
 
-![archetype-catalog]("ArchetypeCatalogs.PNG" MicroNet Archetype Catalogs)
+![#archetype-catalog](ArchetypeCatalogs.PNG "MicroNet Archetype Catalogs")
 
 ### Opening the MicroNet Views
 
