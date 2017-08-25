@@ -62,7 +62,11 @@ Build and Run the AccountDB as a *Service Container* and start the AccountServic
 
 ## Test Client
 
-If all the services are running you are finally ready to connect to the MicroNet application using a client. Add the **mn-archetype-testclient** archetype from the *MicroNet EXAMPLE Service Catalog* to your game workspace.
+If all the services are running you are finally ready to connect to the MicroNet application using a client. If you did not add the MicroNet Catalogs during Workspace Setup, press *Configure...* in the top right and add the MicroNet Example Service Catalog via *Add Remote Catalog...*:
+
+- **MicroNet Examples:** https://mrharibo.github.io/catalog/example-archetype-catalog.xml
+
+Add the **mn-archetype-testclient** archetype from the *MicroNet Examples Service Catalog* to your game workspace.
 
 ![example-service-catalog](ExampleServiceCatalog.PNG "Example Service Catalog")
 
