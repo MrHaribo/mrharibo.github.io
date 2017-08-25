@@ -3,6 +3,7 @@
 - [Getting Started Tutorial](../index.md)
   - [Installation](index.md)
     - [Docker Installation](#docker-installation)
+    - [Start Docker](#start-docker)
     - [Eclipse Installation](#eclipse-installation)
     - [Workspace Setup](#workspace-setup)
     - [Whats Next](#whats-next)
