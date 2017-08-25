@@ -46,6 +46,10 @@ On Mac follow the official Docker [Installation Manual for MacOS](https://docs.d
 
 A fallback plan if none of the above solutions work is to use **Docker Toolbox**. The Docker Toolbox uses *VirtualBox* as its virtualization technology which is widely supported on older operating systems. Use the [Official Docker Toolbox Documentation](https://docs.docker.com/toolbox/overview/) to help you through the Docker Toolbox installation process.
 
+## Start Docker
+
+Make shure to start docker before you continue. Docker is a basic requirement for MicroNet and must be always running to use the Tools and the Framework. Everytime you start working with MicroNet make shure that Docker is running. The respective Docker Installation Guide also contains guidance on how to start Docker.
+
 ## Eclipse Installation
 
 An **Eclipse Oxygen** installation is required to use the MicroNet tools. It is recommended to download a new Eclipse Installation and use it solely for MicroNet because the MicroNet tools automatically synchronize specific files in the workspace. You do not want this behaviour for any other workspace other than MicroNet workspaces.
