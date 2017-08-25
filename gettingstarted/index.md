@@ -83,6 +83,8 @@ The worspace of a game contains a set of metadata that is automatically generate
 
 Use the Docker Settings section to test if your Docker installation works correctly with MicroNet. If you are using Docker Desktop everything should work right away and you can verify that by pressing the *Test Docker* button. If you are using Docker Toolbox specify the Docker Toolbox installation directory and also test your Docker Installation. Check the *use Docker Toolbox* checkbox accordingly.
 
+> The Docker Toolbox Directory should point to the directory of the Docker Toolbox installation containing the *docker* and *docker-compose* executables.
+
 #### Application Docker Network
 
 To ensure connectivity among Microservices a custom Docker Network must be created. It is recommended to use a separate network for all games that are developed in parallel to ensure game isolation. Enter a name for the network and press *Create Network*. Test your network with the *Test Network* button. You can also use a Docker Network that was created in advance but be sure to test it. In this tutorial "mn_bridge_network" will be used as the network name.
