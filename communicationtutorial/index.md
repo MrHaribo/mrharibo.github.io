@@ -15,7 +15,11 @@ This tutorial shows you how the basic connectivity between Microservices using t
 
 ## Adding ActiveMQ
 
-In the first step you will add ActiveMQ to your game workspace as a *Service Project*. Open the *New Project* dialog via the *Project Explorer* or the *File* menu. In the dialog select *Maven -> Maven Project* and press next twice to display the archetype selection page. Select the MicroNet Archetype Catalog and choose the *mn-archetype-activemq* archetype as shown in the image below. Press next and edit the metadata of the ActiveMQ project. The artifactId can be chosen arbitrarily but the groupId should match the groupId in the Game Workspace metadata. Press finish to create the project.
+In the first step you will add ActiveMQ to your game workspace as a *Service Project*. Open the *New Project* dialog via the *Project Explorer* or the *File* menu. In the dialog select *Maven -> Maven Project* and press next twice to display the archetype selection page and select the MicroNet Archetype Catalog. If you did not add the MicroNet Catalogs during Workspace Setup, press *Configure...* in the top right and add the MicroNet Service Catalog via *Add Remote Catalog...*:
+
+- **MicroNet:** https://mrharibo.github.io/catalog/archetype-catalog.xml
+
+With the MicroNet Catalog selected choose the *mn-archetype-activemq* archetype as shown in the image below. Press next and edit the metadata of the ActiveMQ project. The artifactId can be chosen arbitrarily but the groupId should match the groupId in the Game Workspace metadata. Press finish to create the project.
 
 ![#service-catalog](ServiceCatalog.PNG "MicroNet Service Catalog")
 
