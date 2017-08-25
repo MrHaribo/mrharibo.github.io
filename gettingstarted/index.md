@@ -67,7 +67,7 @@ Extract the *eclipse* directory from the archive to you hard drive and start the
 
 Once Eclipse is open, navigate to the *Help -> Install New Software...* dialog. Press the *Add...* button in the top right to add a new Update Site to this Eclipse Installation. Enter *MicroNet* as the name and add *https://mrharibo.github.io/updatesite/* as the location. Choose the MicroNet update site from the "Work with:" drop-down and install the MicroNet plug-in. This plug-in contains all MicroNet Tools.
 
-> Sometimes the MicroNet category is not shown and the check box *Group items by category* must be deselected for MicroNet to show up as indicated in the image below.
+> Sometimes the MicroNet category is not shown and the check box *Group items by category* must be deselected for MicroNet to show up as indicated in the image below. After installation make shure that the Eclipse Docker Tools are able to connect to the Docker Deamon. If you have problems establishing the connection consult the [Eclipse Docker Tooling User Guide](https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling/User_Guide) for help.
 
 ![micronet-update-site](UpdatesiteMarked.PNG "MicroNet Update Site")
 
