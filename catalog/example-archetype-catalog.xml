@@ -3,28 +3,28 @@
     xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-catalog/1.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <archetypes>
-	<archetype>
+    <archetype>
       <groupId>com.github.mrharibo.micronet</groupId>
       <artifactId>mn-archetype-playerservice</artifactId>
-      <version>0.1.0</version>
+      <version>0.1.1</version>
       <repository></repository>
     </archetype>
-	<archetype>
+    <archetype>
       <groupId>com.github.mrharibo.micronet</groupId>
       <artifactId>mn-archetype-roundservice</artifactId>
-      <version>0.1.0</version>
+      <version>0.1.1</version>
       <repository></repository>
     </archetype>
-	<archetype>
+    <archetype>
       <groupId>com.github.mrharibo.micronet</groupId>
       <artifactId>mn-archetype-voteservice</artifactId>
-      <version>0.1.0</version>
+      <version>0.1.1</version>
       <repository></repository>
     </archetype>
-	<archetype>
+    <archetype>
       <groupId>com.github.mrharibo.micronet</groupId>
       <artifactId>mn-archetype-testclient</artifactId>
-      <version>0.1.0</version>
+      <version>0.1.1</version>
       <repository></repository>
     </archetype>
   </archetypes>
