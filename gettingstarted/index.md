@@ -107,6 +107,15 @@ Edit the game metadata according to the specification of your game and apply the
 
 > MicroNet will attempt to synchronize the parent pom.xml file automatically. If this process fails enexpectedly the parent pom.xml can become corrupted. In this case the developer has to "repair" by manually entering the matadata in the pom.xml located in the workspace root. Once repaired the automatical synchronization should work again.
 
+### Adding the MicroNet ServiceCatalog
+
+Open the Preferences Dialog via *Window -> Preferences* and select the *Maven -> Archetypes* Preference Page. Add the two MicroNet Archetype Catalogs by choosing *Add Remote Catalog...* as indicated in the image below.
+
+- **MicroNet:** https://mrharibo.github.io/catalog/archetype-catalog.xml
+- **MicroNet Examples:** https://mrharibo.github.io/catalog/example-archetype-catalog.xml
+
+![archetype-catalog]("ArchetypeCatalogs.PNG" MicroNet Archetype Catalogs)
+
 ### Opening the MicroNet Views
 
 As a last step open all **MicroNet Views**. Open the *Window -> Show View -> Other* dialog and select all views listed under the *MicroNet* category. Also select the **Docker Explorer** under the *Docker* category. Confirm to open all views.
