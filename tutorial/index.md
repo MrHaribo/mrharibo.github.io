@@ -61,6 +61,8 @@ public Response onLogin(Context context, Request request) {
 	return new Response(StatusCode.OK, Integer.toString(user.getId()));
 }
 ```
+> Eclipse helps you to add the missing import for the ParameterCode class. Add the import that Eclipse is proposing.
+
 ## Vote and Round Service
 
 Add the **mn-archetype-voteservice** and **mn-archetype-roundservice** to the game workspace. Start both services like any other service. Both services have no additional requirement and are good to go. With these two services the Simple Example Game is complete.
