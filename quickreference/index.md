@@ -81,7 +81,25 @@ Propably the mostly used feature of the Launch Utilities is the **Build All Serv
 
 ### Service Launch Utilities
 
+The Service Launch Utilities provide shortcuts to containerize individual services.
+
 ![launch-utility-service](LaunchUtilityService.png "MicroNet Service Launch Utility")
+
+1. **Full Build Service:** This includes all steps to containerize a service, namely: perform a Maven build followed by a Docker build which packages the compiled service.
+2. **Build Maven:** With this individual build step only the Maven build is executed. It is possible to containerize the compiled service later on by using the individual build step *Build Docker*.
+3. **Build Docker:** Containerized a service previously compiled with the *Build Maven* command.
+4. **Debug/Run Service Native:** Runs or Debugs a service as a native Eclipse Java application. This is equivalent to running the *ServiceImpl.java* class which is contained in every regular service in the *target/generated-sources/annotations* directory.
+5. **Run Service Container:** Runs the previously built service container. If the container was not built this action will fail.
+6. **Set Network:** Allows to define the network a service uses individually. If this is left untouched the service will connect to the network you specified globally via the preferences. Setting individual networks allows it to separate services from each other for example to reuse ports.
+7. **Add Ports:** Allows to define which ports are published by the container. These ports are available on the host system. Notice that for Docker Toolbox these ports are not available via *localhost* but via the *docker-machine ip*. The format is "hostPort:containerPort".
+8. **Add Native Env Args:** This utility is used to inject environment variables into native launch configurations. The goal is to achieve the same functionality as with **ENV** entries in *Dockerfiles* so the service code can be left unchanged and it is possible to inject different configurations (for examble network addresses) at startup.
+9. **Edit Service Config:** This action simply the settings file of the service in the editor. This can be used to edit all three options 6, 7, and 8 at once. There are also some hidden settings that should be rarely used which are only accessible via the config file.
+  - *ports*: Exactly as 7. 
+  - *network*: Exactly as 8.
+  - *alias*: Network alias of the service in the Docker network
+  - *container.name*: A custom name for the service image
+  - *enabled*: Persists is a service is enabled
+  - *contribute.shared.dir*: Allows to specify Shared Model Templates which are contributed that the Service is added from the catalog.
 
 ### Game Launch Utilities
 
