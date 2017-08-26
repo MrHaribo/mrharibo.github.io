@@ -42,7 +42,7 @@ If you are using a Native Launch Configuration with Docker Toolbox you might run
 
 ![#connection-error](ConnectionError.PNG "Connection Error")
 
-This is because the *docker-machine* is not accessible via *localhost*. MicroNet provides a mechanism to set the Message Broker Address via environment arguments which allow to inject the address of *docker-machine*. In the *Service Explorer* rightclick the service that could not connect and select the *Add Env Vars...* action. Add the following argument:
+This is because the *docker-machine* is not accessible via *localhost*. MicroNet provides a mechanism to set environment variables for Native Launch Configurations which allow to inject the *docker-machine* ip as Message Broker Address. In the *Service Explorer* rightclick the service that could not connect and select the *Add Env Vars...* action. Add the following argument:
 
 - message_broker_address=*your_docker_machine_ip*
 
