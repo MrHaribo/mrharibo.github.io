@@ -132,7 +132,9 @@ As a last step open all **MicroNet Views**. Open the *Window -> Show View -> Oth
 
 #### Opening the MicroNet Error Console
 
-MicroNet is still under development any many aspects are still not covered by the framework. In this regard, MicroNet provides the *MicroNet Console* which shows all errors that happened in the background. Be shure to check it regularly or specifically if something failed scilently in the background. The MicroNet console is available via the pull-down menu of the Service Explorer.
+MicroNet is still under development any many aspects are still not covered by the framework. In this regard, MicroNet provides the *MicroNet Console* which shows all errors that happened in the background. Be shure to check it regularly or specifically if something failed scilently in the background. The MicroNet console is available via the pull-down menu of the Service Explorer as indicated in the image below.
+
+![#micronet-console](OpeningConsole.PNG "Open the MicroNet Console")
 
 ## Whats Next
 
