@@ -29,8 +29,6 @@ To test ActiveMQ find it in the Service Explorer view and right-click it to open
 
 ![docker-explorer](DockerExplorer.PNG "Docker Explorer from the Docker Tools for Eclipse")
 
-> You can also access the ActiveMQ *Web Console* with your browser to observe the state of ActiveMQ. The Web Console is avaibale under http://localhost:8161/admin/ and the default username/password credential is "admin"/"admin". For production use change the administrative credentials as explained on the [ActiveMQ Dockerhub Page](https://hub.docker.com/r/webcenter/activemq/).
-
 ## Creating a Loopback Service
 
 Services can communicate with each other or can send messages to themself. The first service that you will create will do the latter, sending a message to itself.
