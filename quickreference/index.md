@@ -89,7 +89,7 @@ Propably the mostly used feature of the Launch Utilities is the **Build All Serv
 
 ## Game Engine Integration
 
-The game Engine integration component is only experimental at this point. It will be released in the near future.
+A Game Engine integration component for Unity3D is in development. But this component is only experimental at this point. It will be released in the near future.
 
 ## Evaluation Survey
 
