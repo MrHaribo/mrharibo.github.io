@@ -130,6 +130,10 @@ As a last step open all **MicroNet Views**. Open the *Window -> Show View -> Oth
 
 ![#open-views](OpeningViews.PNG "Open the relevant views")
 
+#### Opening the MicroNet Error Console
+
+MicroNet is still under development any many aspects are still not covered by the framework. In this regard, MicroNet provides the *MicroNet Console* which shows all errors that happened in the background. Be shure to check it regularly or specifically if something failed scilently in the background. The MicroNet console is available via the pull-down menu of the Service Explorer.
+
 ## Whats Next
 
 If you have successfully complete the previous steps you completed the installation process and are ready to start developing your first MicroNet application. Continue with the [Basic Communication](../communicationtutorial/index.md) Tutorial.
