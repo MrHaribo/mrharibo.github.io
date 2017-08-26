@@ -27,13 +27,13 @@ To test ActiveMQ find it in the Service Explorer view and right-click it to open
 
 > To verify that ActiveMQ is running you can use the **Docker Explorer** provided by the *Docker Tools for Eclipse* which can be found in the Eclipse marketplace. Once installed open the *Docker Explorer* view through *Window -> Show View -> Other -> Docker -> Docker Explorer*. In the Docker Explorer locate the ActiveMQ container and verify that it is running. The desired state is shown in the image below.
 
-![docker-explorer](DockerExplorer.PNG "Docker Explorer from the Docker Tools for Eclipse")
+![#docker-explorer](DockerExplorer.PNG "Docker Explorer from the Docker Tools for Eclipse")
 
 > You can also access the ActiveMQ *Web Console* with your browser to observe the state of ActiveMQ. The Web Console is avaibale under http://localhost:8161/admin/ and the default username/password credential is "admin"/"admin". For production use change the administrative credentials as explained on the [ActiveMQ Dockerhub Page](https://hub.docker.com/r/webcenter/activemq/).
 
 > If you are using Docker Toolbox you can't access the web console via *localhost* since the Docker Daemon runs on a completely isolated virtual host provided by Virtual Box called a *docker-machine*. In this case replace *localhost* with your docker-machine ip. It is shown when you started Docker via the *Docker Quickstart Terminal* as shown in the image below. If you missed it use the *docker-machine ip* CLI command.
 
-![docker-guickstart-terminal](DockerMachineTerminal.PNG "Docker Machine Startup*)
+![#docker-guickstart-terminal](DockerMachineTerminal.PNG "Docker Machine Startup*)
 
 ## Creating a Loopback Service
 
@@ -43,7 +43,7 @@ Services can communicate with each other or can send messages to themself. The f
 
 Using the MicroNet Service Catalog add the *mn-archetype-simpleservice* to your game workspace the same way you added ActiveMQ. Name the artifactId **FooService**. Upon confirmation a Maven Java *Service Project* will be created in the workspace. In the Service Project expand the *src/main/java* folder and locate the *MyGame.FooService.FooService.java* class as shown in the picture below.
 
-![project-explorer](ProjectExplorer.PNG "Project Explorer showing a Service Project")
+![#project-explorer](ProjectExplorer.PNG "Project Explorer showing a Service Project")
 
 This class can be thought of as the *Main Class* of the service and is used as an entrypoint to inject domain logic into the service. The Service created by the *mn-archetype-simpleservice* archetype is already prepared to be tested right away. Make sure ActiveMQ is running and start the container as a local Java application using the context menu action *Debug/RunServiceNative* in the Service Explorer as shwon in the image below. Check the console as the service starts up and sends itself a message. You can also perform a *Full Service Build* and start the service in a container but be sure to remove it afterwards via the Docker Explorer or you will not be able to start it again due to a naming collision.
 
