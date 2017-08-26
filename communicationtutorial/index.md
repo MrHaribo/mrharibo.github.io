@@ -75,7 +75,7 @@ How to retrieve the *docker-machine-ip* is explained in the section above. You h
 
 ## Adding a Communication Partner
 
-Of course one service does not make up a very interessting distributed application so we spice things up a little by adding a communication partner for our lonely *FooService*. But before we do that, we need to ensure that we give FooService a proper address so it can be found by other services or by the users of the application later on. In the Main Class of FooService edit the `@MessageService` annotation and enter a valid URI e.g. "mn://foo". The protocol portion "mn://" of the URI is required for a service to be recognized by a MicroNet application. Additionally, in the ServiceFoo class remove the 
+Of course one service does not make up a very interessting distributed application so we spice things up a little by adding a communication partner for our lonely *FooService*. But before we do that, we need to ensure that we give FooService a proper address so it can be found by other services or by the users of the application later on. In the *Main Class* of **FooService** edit the `@MessageService` annotation and enter a valid URI e.g. "mn://foo". The protocol portion "mn://" of the URI is required for a service to be recognized by a MicroNet application. Additionally, in the ServiceFoo class remove the 
 
 ```java
 context.sendRequest("mn://my_service/hello/world/handler", new Request("Hello"));
