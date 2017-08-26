@@ -66,6 +66,8 @@ Build and Run the AccountDB as a *Service Container* and start the AccountServic
 
 > If you are using Docker Toolbox the AccountService wont find the AccountDB network address due to the *docker-machine* issue. Be shure to add: **database_address=*your_docker_machine_ip:5432* to the AccountService Native Environment Args. 
 
+> For security reasons you should change all database related passwords. The root password for the PostgreSQL container installation can be changed in the **Dockerfile** in the root folder of the AccountDB project. The password that is used by the Account Service to access the Account database has to be changed in two places: In the **AccountDatabase.java** class in the *src/main/java* folder of the AccountService project and in the init_db.sql in the AccountDB root folder. Make shure both passwords match. 
+
 ## Test Client
 
 If all the services are running you are finally ready to connect to the MicroNet application using a client. If you did not add the MicroNet Catalogs during Workspace Setup, press *Configure...* in the top right and add the MicroNet Example Service Catalog via *Add Remote Catalog...*:
