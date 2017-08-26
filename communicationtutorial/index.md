@@ -38,7 +38,11 @@ To test ActiveMQ find it in the Service Explorer view and right-click it to open
 
 ## Connecting with Docker Toolbox
 
-If you are using a Native Launch Configuration with Docker Toolbox you might run into a connection error like the one shown in the image below. This is because the *docker-machine* is not accessible via *localhost*. MicroNet provides a mechanism to set the Message Broker Address via environment arguments which allow to inject the address of *docker-machine*. In the *Service Explorer* rightclick the service that could not connect and select the *Add Env Vars...* action. Add the following argument:
+If you are using a Native Launch Configuration with Docker Toolbox you might run into a connection error like the one shown in the image below.
+
+![#connection-error](ConnectionError.PNG "Connection Error")
+
+This is because the *docker-machine* is not accessible via *localhost*. MicroNet provides a mechanism to set the Message Broker Address via environment arguments which allow to inject the address of *docker-machine*. In the *Service Explorer* rightclick the service that could not connect and select the *Add Env Vars...* action. Add the following argument:
 
 - message_broker_address=*your_docker_machine_ip*
 
