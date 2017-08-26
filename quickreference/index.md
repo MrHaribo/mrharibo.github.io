@@ -7,6 +7,7 @@
   - [Shared API](#shared-api)
   - [Launch Utility](#launch-utility)
   - [Game Engine Integration](#game-engine-integration)
+  - [Evaluation Survey](#evaluation-survey)
 
 Besides the core Functionality MicroNet provides additional functionality to ease the process of online game development. These concepts are mainly aimed to deal with the complex Microservice topics composition and deployment.
 
@@ -76,7 +77,7 @@ Once API annotations exist, MicroNet uses this information to present the API to
 
 MicroNet provides a series of Launch Configurations to ease the life of DevOps engineers. These utility automate major parts of the composition and containerization of MicroNet applications. The MicroNet Launch Utilities are mainly acceessible via the Service Explorer.
 
-Propably the mostly used feature of the Launch Utilities is the **Build All Services** [build-all](build.png) shortcut. Since MicroNet performs a lot of background activities and specifically code generation, there sometimes might occur issues. To be shure that code generation was performed properly, press the *Build All Services* shortcut manually to invoke the code generation process. This often resolves reference issues. If errors remain the developer has to track them manually. Usually its just imports or package missmatches. In future versions of MicroNet this process will be revisited to make it simpler.
+Propably the mostly used feature of the Launch Utilities is the **Build All Services** ![build-all](build.png) shortcut. Since MicroNet performs a lot of background activities and specifically code generation, there sometimes might occur issues. To be shure that code generation was performed properly, press the *Build All Services* shortcut manually to invoke the code generation process. This often resolves reference issues. If errors remain the developer has to track them manually. Usually its just imports or package missmatches. In future versions of MicroNet this process will be revisited to make it simpler.
 
 ### Service Launch Utilities
 
@@ -89,3 +90,7 @@ Propably the mostly used feature of the Launch Utilities is the **Build All Serv
 ## Game Engine Integration
 
 The game Engine integration component is only experimental at this point. It will be released in the near future.
+
+## Evaluation Survey
+
+If you have not done it already, please be sure to fill out the [Evaluation Survey](https://docs.google.com/forms/d/e/1FAIpQLSc2mOMse_nsa6kJSQsRMN-ph_sUb4EDws9loc530sVPcMOOsg/viewform?usp=sf_link).
