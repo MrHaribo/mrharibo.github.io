@@ -4,6 +4,7 @@
   - [Installation](../gettingstarted/index.md)
   - [Basic Communication](../communicationtutorial/index.md)
     - [Adding ActiveMQ](#adding-activemq)
+    - [Connecting with Docker Toolbox](#connecting-with-docker-toolbox)
     - [Creating a Loopback Service](#creating-a-loopback-service)
     - [Adding a Communication Partner](#adding-a-communication-partner)
     - [Whats Next](#whats-next)
@@ -34,6 +35,14 @@ To test ActiveMQ find it in the Service Explorer view and right-click it to open
 > If you are using Docker Toolbox you can't access the web console via *localhost* since the Docker Daemon runs on a completely isolated virtual host provided by Virtual Box called a *docker-machine*. In this case replace *localhost* with your docker-machine ip. It is shown when you started Docker via the *Docker Quickstart Terminal* as shown in the image below. If you missed it use the *docker-machine ip* CLI command.
 
 ![#docker-guickstart-terminal](DockerMachineTerminal.PNG "Docker Machine Startup")
+
+## Connecting with Docker Toolbox
+
+If you are using a Native Launch Configuration with Docker Toolbox you might run into a connection error like the one shown in the image below. This is because the *docker-machine* is not accessible via *localhost*. MicroNet provides a mechanism to set the Message Broker Address via environment arguments which allow to inject the address of *docker-machine*. In the *Service Explorer* rightclick the service that could not connect and select the *Add Env Vars...* action. Add the following argument:
+
+- message_broker_address=*your_docker_machine_ip*
+
+How to retrieve the *docker-machine-ip* is explained in the section above. You have to do this for all Java services which need access to ActiveMQ. This will be automated in future.
 
 ## Creating a Loopback Service
 
