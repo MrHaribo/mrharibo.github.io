@@ -53,6 +53,10 @@ You can also perform a *Full Service Build* and start the service in a container
 
 > Note that at the moment it is not possible to locally run the same container twice for testing. This feature is planned to be added in the future. Meanwhile you can use Docker Swarm to deploy multiple instances of the same container using the *docker service* CLI.
 
+The desired log output should look similar to the one shown in the image below.
+
+![service-start-log](StartingLog.PNG "Starting Log of a MicroNet Service")
+
 > Tip: If you think a Service Project shows way to many folders in the Project Explorer as add a new *Filter* via the *Drop Down* menu of the Project Explorer. Add "src, target, shared_contribution" as Name filter patterns, as shwon in the image below. You can also check the *Libraries from external* checkbox but cheking on the library folders is sometimes useful.
 
 > ![name-filter-pattern](NameFilterPatterns.PNG "Useful Name filter patterns")
