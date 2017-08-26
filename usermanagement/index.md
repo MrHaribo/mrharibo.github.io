@@ -46,6 +46,8 @@ Add the **mn-archetype-couchbase** archetype to your game workspace using the Mi
 
 Couchbase needs a lot of memory itself and together with MicroNet at least 2048MB of Ram need to be available for the Couchbase container. You can adjust the avaiable RAM for container using the Docker Desktop Settings Window or for Docker Toolbox using the *Oracle VM VirtualBox Manager*.
 
+> You can also access Couchbase with the Web Interface via http://localhost:8091/ui or http://your_docker_machine_ip:8091/ui respectively. The default username/password are Administrator/password. Change the credentials in the *couchbase_init.sh* script which is contained in the Root folder of the Couchbase project.
+
 ## Gateway Service
 
 The Gateway offers the API that is provided by the individual Microservices to the Users of the application. Obviously this service introduces additional security requirements since it has to be accessible from the outside world, the Internet. Up until now all communications have been taking place in a private network not accessible by the outside. All services you introduce are automatically participants of this internal network and therefore all inter service communication is considered secure. To allow external access to services that reside in the internal network, the API Gateway Service comes into play. To keep the internal network secure MicroNet introduces a second public message broker which is generally considered unsecure. Everyone is allowed to connect to this public broker but messages are only forwarded to the internal network on behalf of the API Gateway instances. The API Gateway is implemented as a reverse proxy.
