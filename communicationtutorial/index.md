@@ -4,7 +4,6 @@
   - [Installation](../gettingstarted/index.md)
   - [Basic Communication](../communicationtutorial/index.md)
     - [Adding ActiveMQ](#adding-activemq)
-    - [Connecting with Docker Toolbox](#connecting-with-docker-toolbox)
     - [Creating a Loopback Service](#creating-a-loopback-service)
     - [Adding a Communication Partner](#adding-a-communication-partner)
     - [Whats Next](#whats-next)
@@ -36,18 +35,6 @@ To test ActiveMQ find it in the Service Explorer view and right-click it to open
 
 > ![#docker-guickstart-terminal](DockerMachineTerminal.PNG "Docker Machine Startup")
 
-## Connecting with Docker Toolbox
-
-If you are using a Native Launch Configuration with Docker Toolbox you might run into a connection error like the one shown in the image below.
-
-![#connection-error](ConnectionError.PNG "Connection Error")
-
-This is because the *docker-machine* is not accessible via *localhost*. MicroNet provides a mechanism to set environment variables for Native Launch Configurations which allow to inject the *docker-machine* ip as Message Broker Address. In the *Service Explorer* rightclick the service that could not connect and select the *Add Env Vars...* action. Add the following argument:
-
-- message_broker_address=*your_docker_machine_ip*:61616
-
-How to retrieve the *docker-machine-ip* is explained in the section above. You have to do this for all Java services which need access to ActiveMQ. This will be automated in future.
-
 ## Creating a Loopback Service
 
 Services can communicate with each other or can send messages to themself. The first service that you will create will do the latter, sending a message to itself.
@@ -67,6 +54,18 @@ This class can be thought of as the *Main Class* of the service and is used as a
 > Tip: If you think a Service Project shows way to many folders in the Project Explorer as add a new *Filter* via the *Drop Down* menu of the Project Explorer. Add "src, target, shared_contribution" as Name filter patterns, as shwon in the image below. You can also check the *Libraries from external* checkbox but (viewing)??? the library folders is sometimes useful.
 
 > ![name-filter-pattern](NameFilterPatterns.PNG "Useful Name filter patterns")
+
+### Connecting with Docker Toolbox
+
+If you are using a Native Launch Configuration with Docker Toolbox you might run into a connection error like the one shown in the image below.
+
+![#connection-error](ConnectionError.PNG "Connection Error")
+
+This is because the *docker-machine* is not accessible via *localhost*. MicroNet provides a mechanism to set environment variables for Native Launch Configurations which allow to inject the *docker-machine* ip as Message Broker Address. In the *Service Explorer* rightclick the service that could not connect and select the *Add Env Vars...* action. Add the following argument:
+
+- message_broker_address=*your_docker_machine_ip*:61616
+
+How to retrieve the *docker-machine-ip* is explained in the section above. You have to do this for all Java services which need access to ActiveMQ. This will be automated in future.
 
 ## Adding a Communication Partner
 
