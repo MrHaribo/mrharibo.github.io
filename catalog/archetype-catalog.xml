@@ -30,7 +30,7 @@
     <archetype>
       <groupId>com.github.mrharibo.micronet</groupId>
       <artifactId>mn-archetype-activemq</artifactId>
-      <version>0.1.1</version>
+      <version>0.1.0</version>
       <repository></repository>
     </archetype>
 	<archetype>
