@@ -66,7 +66,7 @@ This class can be thought of as the *Main Class* of the service and is used as a
 
 > Tip: If you think a Service Project shows way to many folders in the Project Explorer as add a new *Filter* via the *Drop Down* menu of the Project Explorer. Add "src, target, shared_contribution" as Name filter patterns, as shwon in the image below. You can also check the *Libraries from external* checkbox but (viewing)??? the library folders is sometimes useful.
 
-![name-filter-pattern](NameFilterPatterns.PNG "Useful Name filter patterns")
+> ![name-filter-pattern](NameFilterPatterns.PNG "Useful Name filter patterns")
 
 ## Adding a Communication Partner
 
