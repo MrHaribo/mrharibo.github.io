@@ -51,6 +51,8 @@ A fallback plan if none of the above solutions work is to use **Docker Toolbox**
 
 Make shure to start docker before you continue. Docker is a basic requirement for MicroNet and must be always running to use the Tools and the Framework. Everytime you start working with MicroNet make shure that Docker is running. The respective Docker Installation Guide also contains guidance on how to start Docker.
 
+If you are using Docker Toolbox make shure that you always start it via the *Docker Quickstart Terminal* prior to opening Eclipse. Else the MicroNet Tools wont be able to access the Docker Daemon.
+
 ## Eclipse Installation
 
 An **Eclipse Oxygen** installation is required to use the MicroNet tools. It is recommended to download a new Eclipse Installation and use it solely for MicroNet because the MicroNet tools automatically synchronize specific files in the workspace. You do not want this behaviour for any other workspace other than MicroNet workspaces.
