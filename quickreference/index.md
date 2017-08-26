@@ -52,8 +52,20 @@ The `@RequestPayload` and `@ResponsePayload` annotations document the type of th
 
 The `@RequestParameters` and `@ResponseParameters` annotations allow to define an array of `@MessageParameter` annotations. Each message parameter must be defined by a ParameterCode along with the class of the payload type.
 
-Generally all MicroNet annotations support a description field to document the functionality of the Shared API in a human readable form. 
+Generally all MicroNet annotations support a description field to document the functionality of the Shared API in a human readable form.  The Listing below shows an example of a fully annotated message listener function.
 
+```java
+@MessageListener(uri="/score/add", desc="Increments the score of the specified player")
+@RequestParameters(@MessageParameter(code=ParameterCode.USER_ID, type=Integer.class, desc="UserID"))
+@RequestPayload(value = Integer.class, desc = "Score Increment")
+public void addScore(Context context, Request request) {
+	int userID = request.getParameters().getInt(ParameterCode.USER_ID);
+	Player player = players.get(userID);
+	int newScore = player.getScore() + Integer.parseInt(request.getData());
+	player.setScore(newScore);
+	players.update(userID, player);
+}
+```
 ### Accessing the Shared API with Code Assist
 
 Once API annotations exist, MicroNet uses this information to present the API to the developer. The complete API is presented in a hierarchical fashion starting with the available services. To test this feature type "mn://" somewhere in a source code and press Ctrl+Space to open the Eclipse Content Assist. You will notice that the full service proposal that is documented is available. The image below shows MicroNet Code Assist in action.
