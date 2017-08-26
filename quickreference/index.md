@@ -95,7 +95,7 @@ The Service Launch Utilities provide shortcuts to containerize individual servic
 8. **Add Native Env Args:** This utility is used to inject environment variables into native launch configurations. The goal is to achieve the same functionality as with **ENV** entries in *Dockerfiles* so the service code can be left unchanged and it is possible to inject different configurations (for examble network addresses) at startup.
 9. **Edit Service Config:** This action simply the settings file of the service in the editor. This can be used to edit all three options 6, 7, and 8 at once. There are also some hidden settings that should be rarely used which are only accessible via the config file.
 
-#### Service Options Overview
+#### Service Config Options Overview
   - *ports*: Exactly as 7. 
   - *network*: Exactly as 8.
   - *alias*: Network alias of the service in the Docker network
@@ -106,6 +106,18 @@ The Service Launch Utilities provide shortcuts to containerize individual servic
 ### Game Launch Utilities
 
 ![launch-utility-game](LaunchUtilityGame.PNG "MicroNet Game Launch Utility")
+
+1. **Run/Debug Enabled Services Native:** Runs or Debugs all services which have the **Enabled** checkbox checked. The services are started as an Eclipse Launch Group wich was promoted to the Eclipse Standard Package with the Latest **Oxygen** Release. Be shure to have this version installed when using Native Game Launch Configurations.
+2. **Generate Game Pom:** Updates the Game Application pom.xml file and adds all **Enabled** services as child projects. This is helpful to build the hole game at once using Maven. The Game Application pom.xml is used to execute the *Build Game Pom* Launch Action 5.
+3. **Generate Game Compose:** Updates the Game Application docker-compose file which can be used to containerize the whole Game Application at once. All enabled services are added to the Game Compose File. The Game Compose file is used to execute the *Build Game Compose* Launch Action 6.
+4. **Build Full Game:** Performs a complete build of the game which includes a Maven build of all *Enabled* services followed by a docker-compose build.
+5. **Build Game Pom:** Builds all services at once using the Game Application pom.xml which has to be generated prior. 
+6. **Build Game Compose:** Containerized all services at once using the Game Compose file which has to be generated prior. 
+7. **Run Game Local Compose:** Runs the complete Game Application as a docker-compose application. The Game Application has to be built prior before this Launch Action can be used.
+8. **Run Game Local Swarm:** Docker Swarm mode is not yet supported by MicroNet. But you can easily use it using the Docker CLI. Refer to the [Docker Swarm Documentation](https://docs.docker.com/engine/swarm/).
+9. **MicroNet Console:** The MicroNet Console helps the developer to notive usage errors but also shows errors of the framework itself. Use it to track missbehaviour of MicroNet.
+10. **MicroNet Preferences:** Shortcut to the MicroNet preference page.
+11. **Enabled:** Allows to mark a service for either Narive Launches and pom.xml respectively docker-compose generation. If the checkbox is checked, the state will be persisted to project preferences which can be slow, the first time.
 
 ## Game Engine Integration
 
