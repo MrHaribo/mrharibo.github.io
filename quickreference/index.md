@@ -5,6 +5,7 @@
   - [Shared Model](#shared-model)
   - [Parameter Codes](#parameter-codes)
   - [Shared API](#shared-api)
+  - [Launch Utility](#launch-utility)
   - [Game Engine Integration](#game-engine-integration)
 
 Besides the core Functionality MicroNet provides additional functionality to ease the process of online game development. These concepts are mainly aimed to deal with the complex Microservice topics composition and deployment.
@@ -58,6 +59,14 @@ Generally all MicroNet annotations support a description field to document the f
 Once API annotations exist, MicroNet uses this information to present the API to the developer. The complete API is presented in a hierarchical fashion starting with the available services. To test this feature type "mn://" somewhere in a source code and press Ctrl+Space to open the Eclipse Content Assist. You will notice that the full service proposal that is documented is available. The image below shows MicroNet Code Assist in action.
 
 ![content-assist](CodeAssist.png "MicroNet Content Assist")
+
+## Launch Utility
+
+MicroNet provides a series of Launch Configurations to ease the life of DevOps engineers. These utility automate major parts of the composition and containerization of MicroNet applications. 
+
+![launch-utility-game](LaunchUtilityGame.png "MicroNet Game Launch Utility")
+
+![launch-utility-service](LaunchUtilityService.png "MicroNet Service Launch Utility")
 
 ## Game Engine Integration
 
