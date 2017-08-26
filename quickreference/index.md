@@ -74,11 +74,17 @@ Once API annotations exist, MicroNet uses this information to present the API to
 
 ## Launch Utility
 
-MicroNet provides a series of Launch Configurations to ease the life of DevOps engineers. These utility automate major parts of the composition and containerization of MicroNet applications. 
+MicroNet provides a series of Launch Configurations to ease the life of DevOps engineers. These utility automate major parts of the composition and containerization of MicroNet applications. The MicroNet Launch Utilities are mainly acceessible via the Service Explorer.
 
-![launch-utility-game](LaunchUtilityGame.PNG "MicroNet Game Launch Utility")
+Propably the mostly used feature of the Launch Utilities is the **Build All Services** [build-all](build.png) shortcut. Since MicroNet performs a lot of background activities and specifically code generation, there sometimes might occur issues. To be shure that code generation was performed properly, press the *Build All Services* shortcut manually to invoke the code generation process. This often resolves reference issues. If errors remain the developer has to track them manually. Usually its just imports or package missmatches. In future versions of MicroNet this process will be revisited to make it simpler.
+
+### Service Launch Utilities
 
 ![launch-utility-service](LaunchUtilityService.png "MicroNet Service Launch Utility")
+
+### Game Launch Utilities
+
+![launch-utility-game](LaunchUtilityGame.PNG "MicroNet Game Launch Utility")
 
 ## Game Engine Integration
 
