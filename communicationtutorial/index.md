@@ -34,7 +34,7 @@ To test ActiveMQ find it in the Service Explorer view and right-click it to open
 
 > If you are using Docker Toolbox you can't access the web console via *localhost* since the Docker Daemon runs on a completely isolated virtual host provided by Virtual Box called a *docker-machine*. In this case replace *localhost* with your docker-machine ip. It is shown when you started Docker via the *Docker Quickstart Terminal* as shown in the image below. If you missed it use the *docker-machine ip* CLI command.
 
-![#docker-guickstart-terminal](DockerMachineTerminal.PNG "Docker Machine Startup")
+> ![#docker-guickstart-terminal](DockerMachineTerminal.PNG "Docker Machine Startup")
 
 ## Connecting with Docker Toolbox
 
