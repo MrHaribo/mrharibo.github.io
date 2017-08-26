@@ -62,6 +62,8 @@ The Account archetype is a Multi-Module Maven archetype and consists of two proj
 
 Build and Run the AccountDB as a *Service Container* and start the AccountService project either *Native* or as a *Service Container*. In this case it is necessary to at least start the AccountDB simultaneously with the AccountService to prevent any timimng issues.
 
+> If you are using Docker Toolbox the AccountService wont find the AccountDB network address due to the *docker-machine* issue. Be shure to add: **database_address=*your_docker_machine_ip:5432* to the AccountService Native Environment Args. 
+
 ## Test Client
 
 If all the services are running you are finally ready to connect to the MicroNet application using a client. If you did not add the MicroNet Catalogs during Workspace Setup, press *Configure...* in the top right and add the MicroNet Example Service Catalog via *Add Remote Catalog...*:
@@ -73,6 +75,8 @@ Add the **mn-archetype-testclient** archetype from the *MicroNet Examples Servic
 ![example-service-catalog](ExampleServiceCatalog.PNG "Example Service Catalog")
 
 The test client is a native Java application providing a small console style UI. To start the TestClient right click the MyGame.TestClient.TestClient.java in the *src/main/java* directory and click *Run/Debug As -> Java Application*.
+
+> If you are using Docker Toolbox you run into the same connectivity problems as with services. But since the Client is not a service you have to add the **message_broker_address=your_docker_machine_ip:61616** to the Eclipse Run Configuration of TestClient. Add the message broker address on the *Environment* tab of the *TestClient* Launch configuration.
 
 ![test-client](TestClient.PNG "Test Client")
 
