@@ -33,7 +33,7 @@ The player voting communication flow (1,2,3,4 in the image):
   
 ## Player Session Management
 
-The design of the Example Game foresees that a player session is created for every player that connects to the game. The Player Service is responsible to provide an interface to access player sessions. Add the *mn-archetype-playerservice* to to the game workspace. Just like the API Gateway Service the Player Service needs access to the session store. So make sure that Couchbase is running before you start the PlayerService.
+The design of the Example Game foresees that a player session is created for every player that connects to the game. The Player Service is responsible to provide an interface to access player sessions. Add the **mn-archetype-playerservice** to to the game workspace. Just like the API Gateway Service the Player Service needs access to the session store. So make sure that Couchbase is running before you start the PlayerService.
 
 One thing that is left to do for the developer is to decide at what moment the player session is added to the session store. The simplest possibility is to add the session right after a successful login of a User. A place to do that is in the `AccountService` right before returning the loging response after a successful login. In the `onLogin` method in the `AccountService` main class add the required code as indicated below to send a message to the *mn://player/add* queue which is observed by the Player Service. The following code snipplet shows how the `onLogin` method looks like after the addition. 
 
@@ -63,7 +63,7 @@ public Response onLogin(Context context, Request request) {
 ```
 ## Vote and Round Service
 
-Add the *mn-archetype-voteservice* and *mn-archetype-roundservice* to the game workspace. Start both services like any other service. Both services have no additional requirement and are good to go. With these two services the Simple Example Game is complete.
+Add the **mn-archetype-voteservice** and **mn-archetype-roundservice** to the game workspace. Start both services like any other service. Both services have no additional requirement and are good to go. With these two services the Simple Example Game is complete.
 
 > The Round Service is a little bit special since it has the requirement to be instantiated only once because the Round Control Events may only be broadcasted once. MicroNet does not yet provide a way to limit the number of service instances so the developer is responsible to ensure this.
 
