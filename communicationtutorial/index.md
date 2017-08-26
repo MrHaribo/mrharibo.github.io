@@ -45,7 +45,7 @@ Using the MicroNet Service Catalog add the *mn-archetype-simpleservice* to your 
 
 ![#project-explorer](ProjectExplorer.PNG "Project Explorer showing a Service Project")
 
-This class can be thought of as the *Main Class* of the service and is used as an entrypoint to inject domain logic into the service. The Service created by the *mn-archetype-simpleservice* archetype is already prepared to be tested right away. Make sure ActiveMQ is running and start the container as a local Java application using the context menu action *Debug/RunServiceNative* in the Service Explorer as shwon in the image below. Check the console as the service starts up and sends itself a message. If you are using Docker Toolbox you most likely get a connection error. See [below](#connectingcwith-docker-toolbox) how to deal with this.
+This class can be thought of as the *Main Class* of the service and is used as an entrypoint to inject domain logic into the service. The Service created by the *mn-archetype-simpleservice* archetype is already prepared to be tested right away. Make sure ActiveMQ is running and start the container as a local Java application using the context menu action *Debug/RunServiceNative* in the Service Explorer as shwon in the image below. Check the console as the service starts up and sends itself a message. If you are using Docker Toolbox you most likely get a connection error. See [below](#connecting-with-docker-toolbox) how to deal with this.
 
 You can also perform a *Full Service Build* and start the service in a container but be sure to remove it afterwards via the Docker Explorer or you will not be able to start it again due to a naming collision.
 
