@@ -64,7 +64,7 @@ Once API annotations exist, MicroNet uses this information to present the API to
 
 MicroNet provides a series of Launch Configurations to ease the life of DevOps engineers. These utility automate major parts of the composition and containerization of MicroNet applications. 
 
-![launch-utility-game](LaunchUtilityGame.png "MicroNet Game Launch Utility")
+![launch-utility-game](LaunchUtilityGame.PNG "MicroNet Game Launch Utility")
 
 ![launch-utility-service](LaunchUtilityService.png "MicroNet Service Launch Utility")
 
