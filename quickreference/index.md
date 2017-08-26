@@ -94,6 +94,8 @@ The Service Launch Utilities provide shortcuts to containerize individual servic
 7. **Add Ports:** Allows to define which ports are published by the container. These ports are available on the host system. Notice that for Docker Toolbox these ports are not available via *localhost* but via the *docker-machine ip*. The format is "hostPort:containerPort".
 8. **Add Native Env Args:** This utility is used to inject environment variables into native launch configurations. The goal is to achieve the same functionality as with **ENV** entries in *Dockerfiles* so the service code can be left unchanged and it is possible to inject different configurations (for examble network addresses) at startup.
 9. **Edit Service Config:** This action simply the settings file of the service in the editor. This can be used to edit all three options 6, 7, and 8 at once. There are also some hidden settings that should be rarely used which are only accessible via the config file.
+
+#### Service Options Overview
   - *ports*: Exactly as 7. 
   - *network*: Exactly as 8.
   - *alias*: Network alias of the service in the Docker network
