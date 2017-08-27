@@ -49,9 +49,9 @@ A fallback plan if none of the above solutions work is to use **Docker Toolbox**
 
 ## Start Docker
 
-Make shure to start docker before you continue. Docker is a basic requirement for MicroNet and must be always running to use the Tools and the Framework. Everytime you start working with MicroNet make shure that Docker is running. The respective Docker Installation Guide also contains guidance on how to start Docker.
+Make sure to start docker before you continue. Docker is a basic requirement for MicroNet and must be always running to use the Tools and the Framework. Everytime you start working with MicroNet make sure that Docker is running. The respective Docker Installation Guide also contains guidance on how to start Docker.
 
-If you are using Docker Toolbox make shure that you always start it via the *Docker Quickstart Terminal* prior to opening Eclipse. Else the MicroNet Tools wont be able to access the Docker Daemon.
+If you are using Docker Toolbox make sure that you always start it via the *Docker Quickstart Terminal* prior to opening Eclipse. Else the MicroNet Tools wont be able to access the Docker Daemon.
 
 ## Eclipse Installation
 
@@ -77,7 +77,7 @@ Once Eclipse is open, navigate to the *Help -> Install New Software...* dialog. 
 
 Although not mandatory it is recommended to install the *Docker Tools for Eclipse*. The Docker Tools are a handy collection of visual tools that make the management of the Docker Engine more comfortable. The Eclipse Docker Tools can be installed via the Eclipse Marketplace under *Help -> Eclipse Marketplace...*. Just enter "Docker Tools" in the search field as shown in the image below.
 
-After installation make shure that the Eclipse Docker Tools are able to connect to the Docker Deamon. If you have problems establishing the connection consult the [Eclipse Docker Tooling User Guide](https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling/User_Guide) for help.
+After installation make sure that the Eclipse Docker Tools are able to connect to the Docker Deamon. If you have problems establishing the connection consult the [Eclipse Docker Tooling User Guide](https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling/User_Guide) for help.
 
 ![install-eclipse-docker-tools](EclipseDockerTools.PNG "Eclipse Docker Tools Installation")
 
@@ -132,7 +132,7 @@ As a last step open all **MicroNet Views**. Open the *Window -> Show View -> Oth
 
 #### Opening the MicroNet Error Console
 
-MicroNet is still under development any many aspects are still not covered by the framework. In this regard, MicroNet provides the *MicroNet Console* which shows all errors that happened in the background. Be shure to check it regularly or specifically if something failed scilently in the background. The MicroNet console is available via the pull-down menu of the Service Explorer as indicated in the image below.
+MicroNet is still under development any many aspects are still not covered by the framework. In this regard, MicroNet provides the *MicroNet Console* which shows all errors that happened in the background. Be sure to check it regularly or specifically if something failed scilently in the background. The MicroNet console is available via the pull-down menu of the Service Explorer as indicated in the image below.
 
 ![#micronet-console](OpeningConsole.PNG "Open the MicroNet Console")
 
