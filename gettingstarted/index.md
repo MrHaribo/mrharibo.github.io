@@ -77,9 +77,13 @@ Once Eclipse is open, navigate to the *Help -> Install New Software...* dialog. 
 
 Although not mandatory it is recommended to install the *Docker Tools for Eclipse*. The Docker Tools are a handy collection of visual tools that make the management of the Docker Engine more comfortable. The Eclipse Docker Tools can be installed via the Eclipse Marketplace under *Help -> Eclipse Marketplace...*. Just enter "Docker Tools" in the search field as shown in the image below.
 
-After installation make sure that the Eclipse Docker Tools are able to connect to the Docker Deamon. If you have problems establishing the connection consult the [Eclipse Docker Tooling User Guide](https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling/User_Guide) for help.
-
 ![install-eclipse-docker-tools](EclipseDockerTools.PNG "Eclipse Docker Tools Installation")
+
+After installation make sure that the Eclipse Docker Tools are able to connect to the Docker Deamon. Connecting the Eclipse Docker Tools can sometime be a mit of a menace. For detailed explanation consult the [Eclipse Docker Tooling User Guide](https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling/User_Guide) for help. An example for the connection settings for Docker Desktop for Windows is shown in the image below. It might be also necessary to disable TSL for local connections to *tcp://localhost:2375*. You can do so in the Docker Desktop Client Settings Page under *Settings -> General*.
+
+On MacOS it might be easiest to specify the location of the Docker Socket File.
+
+![connect-docker-tools](ConnectDockerTools.PNG "Connect Docker Toolbox to Docker")
 
 ## Workspace Setup
 
