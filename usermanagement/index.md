@@ -38,7 +38,7 @@ The Login Process that MicroNet defines is aimed to be as simple as possible and
 
 MicroNet uses [Couchbase](https://www.couchbase.com/) as a NoSQL database to provide Session Store capabilities. Think of the session store as a shared data storage used by your Microservices to persist data for a set amount of time or indefinitly. The distibuted nature of Couchbase makes it possible to make often used session data highly available among services using eventual consistency concepts.
 
-> Because multiple instances of several Microservices are deployed to make these Microservice applications reliable and scalable, services are not allowed to store session data directly in-memory. Instead the session store must be used to persist data between requests. The result are stateless message transfers.
+> Because multiple instances of several Microservices are deployed to make these Microservice applications reliable and scalable, services are not allowed to store session data directly in-memory. Instead the session store must be used to persist data between requests. This design encourages stateless message transfers.
 
 Add the **mn-archetype-couchbase** archetype to your game workspace using the MicroNet *Service Catalog*. Perform a *Full Service Build* of the Couchbase Service Project from the Service Explorer and afterwards start Couchbase via *Start Serivce Container* in the Service Explorer.
 
