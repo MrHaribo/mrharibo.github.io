@@ -78,9 +78,9 @@ How to retrieve the *docker-machine-ip* is explained in the section above. You h
 Of course one service does not make up a very interessting distributed application so we spice things up a little by adding a communication partner for our lonely *FooService*. But before we do that, we need to ensure that we give FooService a proper address so it can be found by other services or by the users of the application later on. In the *Main Class* of **FooService** edit the `@MessageService` annotation and enter a valid URI e.g. "mn://foo". The protocol portion "mn://" of the URI is required for a service to be recognized by a MicroNet application. Additionally, in the ServiceFoo class remove the 
 
 ```java
-context.sendRequest("mn://my_service/hello/world/handler", new Request("Hello"));
+context.sendRequest("mn://fooservice/hello/world/handler", new Request("Hello"));
 ``` 
-call from the start method since the service "mn://my_service" no longer exists. Finally the FooService should look like this:
+call from the start method since the service "mn://fooservice" no longer exists. Finally the FooService should look like this:
 
 ```java
 @MessageService(uri = "mn://foo")
@@ -101,7 +101,7 @@ public class FooService {
 Now add another *mn-archetype-simpleservice* archetype project to your game workspace and name the artifactId **BarService**. In the Main Class of the BarService change the `@MessageService` and enter a valid URI for the service for example "mn://bar". Change the call in the BarService Main Class from 
 
 ```java
-context.sendRequest("mn://my_service/hello/world/handler", new Request("Hello"));
+context.sendRequest("mn://barservice/hello/world/handler", new Request("Hello"));
 ```
 
 to
