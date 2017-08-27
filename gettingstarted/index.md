@@ -73,7 +73,7 @@ Once Eclipse is open, navigate to the *Help -> Install New Software...* dialog. 
 
 ![micronet-update-site](UpdatesiteMarked.PNG "MicroNet Update Site")
 
-### Install Docker Toolbox
+### Install Docker Tools for Eclipse
 
 Although not mandatory it is recommended to install the *Docker Tools for Eclipse*. The Docker Tools are a handy collection of visual tools that make the management of the Docker Engine more comfortable. The Eclipse Docker Tools can be installed via the Eclipse Marketplace under *Help -> Eclipse Marketplace...*. Just enter "Docker Tools" in the search field as shown in the image below.
 
