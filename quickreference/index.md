@@ -77,7 +77,7 @@ Once API annotations exist, MicroNet uses this information to present the API to
 
 MicroNet provides a series of Launch Configurations to ease the life of DevOps engineers. These utility automate major parts of the composition and containerization of MicroNet applications. The MicroNet Launch Utilities are mainly acceessible via the Service Explorer.
 
-Propably the mostly used feature of the Launch Utilities is the **Build All Services** ![build-all](build.png) shortcut. Since MicroNet performs a lot of background activities and specifically code generation, there sometimes might occur issues. To be shure that code generation was performed properly, press the *Build All Services* shortcut manually to invoke the code generation process. This often resolves reference issues. If errors remain the developer has to track them manually. Usually its just imports or package missmatches. In future versions of MicroNet this process will be revisited to make it simpler.
+Propably the mostly used feature of the Launch Utilities is the **Build All Services** ![build-all](build.png) shortcut. Since MicroNet performs a lot of background activities and specifically code generation, there sometimes might occur issues. To be sure that code generation was performed properly, press the *Build All Services* shortcut manually to invoke the code generation process. This often resolves reference issues. If errors remain the developer has to track them manually. Usually its just imports or package missmatches. In future versions of MicroNet this process will be revisited to make it simpler.
 
 ### Service Launch Utilities
 
@@ -107,7 +107,7 @@ The Service Launch Utilities provide shortcuts to containerize individual servic
 
 ![launch-utility-game](LaunchUtilityGame.PNG "MicroNet Game Launch Utility")
 
-1. **Run/Debug Enabled Services Native:** Runs or Debugs all services which have the **Enabled** checkbox checked. The services are started as an Eclipse Launch Group wich was promoted to the Eclipse Standard Package with the Latest **Oxygen** Release. Be shure to have this version installed when using Native Game Launch Configurations.
+1. **Run/Debug Enabled Services Native:** Runs or Debugs all services which have the **Enabled** checkbox checked. The services are started as an Eclipse Launch Group wich was promoted to the Eclipse Standard Package with the Latest **Oxygen** Release. Be sure to have this version installed when using Native Game Launch Configurations.
 2. **Generate Game Pom:** Updates the Game Application pom.xml file and adds all **Enabled** services as child projects. This is helpful to build the hole game at once using Maven. The Game Application pom.xml is used to execute the *Build Game Pom* Launch Action 5.
 3. **Generate Game Compose:** Updates the Game Application docker-compose file which can be used to containerize the whole Game Application at once. All enabled services are added to the Game Compose File. The Game Compose file is used to execute the *Build Game Compose* Launch Action 6.
 4. **Build Full Game:** Performs a complete build of the game which includes a Maven build of all *Enabled* services followed by a docker-compose build.
