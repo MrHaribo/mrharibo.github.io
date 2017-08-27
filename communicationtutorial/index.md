@@ -19,7 +19,7 @@ In the first step you will add ActiveMQ to your game workspace as a *Service Pro
 
 - **MicroNet:** https://mrharibo.github.io/catalog/archetype-catalog.xml
 
-With the MicroNet Catalog selected choose the *mn-archetype-activemq* archetype as shown in the image below. Press next and edit the metadata of the ActiveMQ project. The artifactId can be chosen arbitrarily but the groupId should match the groupId in the Game Workspace metadata. Press finish to create the project.
+With the MicroNet Catalog selected choose the *mn-archetype-activemq* archetype as shown in the image below and press next. On the next page edit the project metadata of the ActiveMQ project. The artifactId of the ActiveMQ project can be chosen arbitrarily but the groupId should match the groupId which you specified during Game Workspace setup earlier. Press finish to create the project.
 
 ![#service-catalog](ServiceCatalog.PNG "MicroNet Service Catalog")
 
