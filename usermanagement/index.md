@@ -36,7 +36,7 @@ The Login Process that MicroNet defines is aimed to be as simple as possible and
 
 ## Session Store
 
-MicroNet uses [Couchbase](https://www.couchbase.com/) as a NoSQL database to provide Session Store capabilities. Think of the session store as a shared data storage used by your Microservices to persist data for a set amount of time or indefinitly. The distibuted nature of Couchbase makes it possible to make often used session data highly available among services using eventual consistency concepts.
+MicroNet uses [Couchbase](https://www.couchbase.com/) as a NoSQL database to provide Session Store capabilities. Think of the session store as a shared data storage used by your Microservices to persist data for a set amount of time or infinitely. The distributed nature of Couchbase makes it possible to make often used session data highly available among services using eventual consistency concepts.
 
 > Because multiple instances of several Microservices are deployed to make these Microservice applications reliable and scalable, services are not allowed to store session data directly in-memory. Instead the session store must be used to persist data between requests. This design encourages stateless message transfers.
 
@@ -44,13 +44,13 @@ Add the **mn-archetype-couchbase** archetype to your game workspace using the Mi
 
 > Important: MicroNet uses a shell script called *wait-for-it.sh* to ensure that required services like activemq are avaible before starting dependent services. This however does not work for couchbase because the ports offered by couchbase are already open during initialization of couchbase and therefore starting couchbase simultaneously with any dependent container leads inevitably to errors. It is therefore recommended to start couchbase prior to any other services to ensure availibility. If anyone finds a solution for this timing issue, please contact me.
 
-Couchbase needs a lot of memory itself and together with MicroNet at least 2048MB of Ram need to be available for the Couchbase container. You can adjust the avaiable RAM for container using the Docker Desktop Settings Window or for Docker Toolbox using the *Oracle VM VirtualBox Manager*.
+Couchbase needs a lot of memory itself and together with MicroNet at least 2048MB of Ram need to be available for the Couchbase container. You can adjust the available RAM for container using the Docker Desktop Settings Window or for Docker Toolbox using the *Oracle VM VirtualBox Manager*.
 
 > You can also access Couchbase with the Web Interface via http://localhost:8091/ui or http://your_docker_machine_ip:8091/ui respectively. The default username/password are Administrator/password. Change the credentials in the *couchbase_init.sh* script which is contained in the Root folder of the Couchbase project.
 
 ## Gateway Service
 
-The Gateway offers the API that is provided by the individual Microservices to the Users of the application. Obviously this service introduces additional security requirements since it has to be accessible from the outside world, the Internet. Up until now all communications have been taking place in a private network not accessible by the outside. All services you introduce are automatically participants of this internal network and therefore all inter service communication is considered secure. To allow external access to services that reside in the internal network, the API Gateway Service comes into play. To keep the internal network secure MicroNet introduces a second public message broker which is generally considered un-secure. Everyone is allowed to connect to this public broker but messages are only forwarded to the internal network on behalf of the API Gateway instances. The API Gateway is implemented as a reverse proxy.
+The Gateway offers the API that is provided by the individual Microservices to the Users of the application. Obviously this service introduces additional security requirements since it has to be accessible from the outside world, the Internet. Up until now all communications have been taking place in a private network not accessible by the outside. All services you introduce are automatically participants of this internal network and therefore all inter-service communication is considered secure. To allow external access to services that reside in the internal network, the API Gateway Service comes into play. To keep the internal network secure MicroNet introduces a second public message broker which is generally considered un-secure. Everyone is allowed to connect to this public broker but messages are only forwarded to the internal network on behalf of the API Gateway instances. The API Gateway is implemented as a reverse proxy.
 
 > The "two message broker" concept is not yet implemented in MicroNet. Momentarily all connections go directly to the internal network which is un-secure. This is also the main reason why it is not advised to use MicroNet for production at the current stage. Also, encryption is a feature that is not yet supported by MicroNet and all passwords are stored in plain text. All these security aspects will be covered as soon as possible.
 
@@ -62,7 +62,7 @@ The Account archetype is a Multi-Module Maven archetype and consists of two proj
 
 > Notice that choosing the acrifactId "Account" results in the Service projects: Account, AccountService, and AccountDB. The Account project itself is not used for anything but is required for the Maven project Hierarchy.
 
-Build and Run the AccountDB as a *Service Container* and start the AccountService project either *Native* or as a *Service Container*. In this case it is necessary to at least start the AccountDB simultaneously with the AccountService to prevent any timimng issues.
+Build and Run the AccountDB as a *Service Container* and start the AccountService project either *Native* or as a *Service Container*. In this case it is necessary to at least start the AccountDB simultaneously with the AccountService to prevent any timing issues.
 
 > If you are using Docker Toolbox the AccountService wont find the AccountDB network address due to the *docker-machine* issue. Be sure to add: **database_address=*your_docker_machine_ip:5432* to the AccountService Native Environment Args. 
 
@@ -88,5 +88,5 @@ If everything went well you can register and login at this point... You are onli
 
 ## Whats Next
 
-Now that we have basic communication and user management out of the way we can finally move on an implement some gameplay functionality. Continue with the [Simple Example Game](../tutorial/index.md) section.
+Now that we have basic communication and user management out of the way we can finally move on an implement some game-play functionality. Continue with the [Simple Example Game](../tutorial/index.md) section.
 

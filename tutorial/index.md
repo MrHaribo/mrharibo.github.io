@@ -23,7 +23,7 @@ The game round control communication flow (A,B,C,D in the image):
 - B1. All voting services receive the new round event and store the next guess number in memory.
 - B2. One player service receives the new round event to issue a score broadcast. The scores of all players are available through the session store.
 - C. The player service which has received the new round event broadcasts a score update event to all participating players.
-- D. Each player receives the score update and updates his scoreboard accordingly. 
+- D. Each player receives the score update and updates his score-board accordingly. 
 
 The player voting communication flow (1,2,3,4 in the image):
 1. The player sends his vote to the game application.
@@ -35,7 +35,7 @@ The player voting communication flow (1,2,3,4 in the image):
 
 The design of the Example Game foresees that a player session is created for every player that connects to the game. The Player Service is responsible to provide an interface to access player sessions. Add the **mn-archetype-playerservice** to to the game workspace. Just like the API Gateway Service the Player Service needs access to the session store. So make sure that Couchbase is running before you start the PlayerService.
 
-One thing that is left to do for the developer is to decide at what moment the player session is added to the session store. The simplest possibility is to add the session right after a successful login of a User. A place to do that is in the `AccountService` right before returning the loging response after a successful login. In the `onLogin` method in the `AccountService` main class add the required code as indicated below to send a message to the *mn://player/add* queue which is observed by the Player Service. The following code snipplet shows how the `onLogin` method looks like after the addition. 
+One thing that is left to do for the developer is to decide at what moment the player session is added to the session store. The simplest possibility is to add the session right after a successful login of a User. A place to do that is in the `AccountService` right before returning the login response after a successful login. In the `onLogin` method in the `AccountService` main class add the required code as indicated below to send a message to the *mn://player/add* queue which is observed by the Player Service. The following code snipplet shows how the `onLogin` method looks like after the addition. 
 
 ```java
 @MessageListener(uri = "/login", desc="Attempt to log in a User.")

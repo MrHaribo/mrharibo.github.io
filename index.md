@@ -4,7 +4,7 @@ MicroNet is an open source framework designed for developing complex online game
 
 The MicroNet **Core Framework** provides components to abstract the low level aspects: *networking*, *serialization*, and *persistence*. Presenting them to the developer in a convenient way. On top of MicroNet's low level functionality the framework provides high level game functionality in the form of a **Service Catalog** which allows the developer to quickly integrate often required functionality e.g. user management, matchmaking, items, shops, or vehicles into a game project. 
 
-The **MicroNet Tools** are a plug-in collection for the *Eclipse IDE*. The plug-ins provide a convenient way to develop the overall application behaviour of an application that is composed of multiple Microservices.
+The **MicroNet Tools** are a plug-in collection for the *Eclipse IDE*. The plug-ins provide a convenient way to develop the overall application behavior of an application that is composed of multiple Microservices.
 
 - [Getting Started Tutorial](gettingstarted/index.md)
   - [Installation](gettingstarted/index.md)

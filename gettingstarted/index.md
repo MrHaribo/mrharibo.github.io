@@ -45,17 +45,17 @@ On Mac follow the official Docker [Installation Manual for MacOS](https://docs.d
 
 ### Docker Toolbox
 
-A fallback plan if none of the above solutions work is to use **Docker Toolbox**. The Docker Toolbox uses *VirtualBox* as its virtualization technology which is widely supported on older operating systems. Use the [Official Docker Toolbox Documentation](https://docs.docker.com/toolbox/overview/) to help you through the Docker Toolbox installation process.
+A fall-back plan if none of the above solutions work is to use **Docker Toolbox**. The Docker Toolbox uses *VirtualBox* as its virtualization technology which is widely supported on older operating systems. Use the [Official Docker Toolbox Documentation](https://docs.docker.com/toolbox/overview/) to help you through the Docker Toolbox installation process.
 
 ## Start Docker
 
-Make sure to start docker before you continue. Docker is a basic requirement for MicroNet and must be always running to use the Tools and the Framework. Everytime you start working with MicroNet make sure that Docker is running. The respective Docker Installation Guide also contains guidance on how to start Docker.
+Make sure to start docker before you continue. Docker is a basic requirement for MicroNet and must be always running to use the Tools and the Framework. Every time you start working with MicroNet make sure that Docker is running. The respective Docker Installation Guide also contains guidance on how to start Docker.
 
 If you are using Docker Toolbox make sure that you always start it via the *Docker Quickstart Terminal* prior to opening Eclipse. Else the MicroNet Tools wont be able to access the Docker Daemon.
 
 ## Eclipse Installation
 
-An **Eclipse Oxygen** installation is required to use the MicroNet tools. It is recommended to download a new Eclipse Installation and use it solely for MicroNet because the MicroNet tools automatically synchronize specific files in the workspace. You do not want this behaviour for any other workspace other than MicroNet workspaces.
+An **Eclipse Oxygen** installation is required to use the MicroNet tools. It is recommended to download a new Eclipse Installation and use it solely for MicroNet because the MicroNet tools automatically synchronize specific files in the workspace. You do not want this behavior for any other workspace other than MicroNet workspaces.
 
 Download the *Eclipse IDE for Java Developers* from the [Eclipse Download Page](https://www.eclipse.org/downloads/eclipse-packages/) for your specific operating system as shown in the image below. Be sure to download the **packaged version** of Eclipse and not the installer to ensure the separation of the Eclipse used by MicroNet to other Eclipse installations. 
 
@@ -79,7 +79,7 @@ Although not mandatory it is recommended to install the *Docker Tools for Eclips
 
 ![install-eclipse-docker-tools](EclipseDockerTools.PNG "Eclipse Docker Tools Installation")
 
-After installation make sure that the Eclipse Docker Tools are able to connect to the Docker Deamon. Connecting the Eclipse Docker Tools can sometime be a mit of a menace. For detailed explanation consult the [Eclipse Docker Tooling User Guide](https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling/User_Guide) for help. An example for the connection settings for Docker Desktop for Windows is shown in the image below. It might be also necessary to disable TLS for local connections to *tcp://localhost:2375*. You can do so in the Docker Desktop Client Settings Page under *Settings -> General*.
+After installation make sure that the Eclipse Docker Tools are able to connect to the Docker Deamon. Connecting the Eclipse Docker Tools can sometime be a bit of a menace. For detailed explanation consult the [Eclipse Docker Tooling User Guide](https://wiki.eclipse.org/Linux_Tools_Project/Docker_Tooling/User_Guide) for help. An example for the connection settings for Docker Desktop for Windows is shown in the image below. It might be also necessary to disable TLS for local connections to *tcp://localhost:2375*. You can do so in the Docker Desktop Client Settings Page under *Settings -> General*.
 
 On MacOS it might be easiest to specify the location of the Docker Socket File.
 
@@ -91,11 +91,11 @@ When you open Eclipse you will be prompted a *Workspace Directory*. Every Game d
 
 ### Adding a Java 8 JDK
 
-MicroNet requires a JDK version of 1.8.X or higher. If you dont have a JDK installed on your computer download the Java 8 JDK fom the [Official Java Download Page](http://www.oracle.com/technetwork/java/javase/downloads/index.html). Open the Preferences Window via *Window -> Preferences* and select the *Java -> Installed JREs* Preference Page. Select your Java 8 JDK and make sure to set it as default JRE.
+MicroNet requires a JDK version of 1.8.X or higher. If you don't have a JDK installed on your computer download the Java 8 JDK from the [Official Java Download Page](http://www.oracle.com/technetwork/java/javase/downloads/index.html). Open the Preferences Window via *Window -> Preferences* and select the *Java -> Installed JREs* Preference Page. Select your Java 8 JDK and make sure to set it as default JRE.
 
 ### MicroNet Settings
 
-The worspace of a game contains a set of metadata that is automatically generated when the workspace is opened for the first time. The first step after opening the workspace should be to configure the generated metadata according to the game you want to develop. Open the MicroNet global preference page under *Window -> Preferences -> MicroNet*.
+The workspace of a game contains a set of metadata that is automatically generated when the workspace is opened for the first time. The first step after opening the workspace should be to configure the generated metadata according to the game you want to develop. Open the MicroNet global preference page under *Window -> Preferences -> MicroNet*.
 
 ![micronet-prefs](Settings.PNG "MicroNet Preference Page")
 
@@ -136,7 +136,7 @@ As a last step open all **MicroNet Views**. Open the *Window -> Show View -> Oth
 
 #### Opening the MicroNet Error Console
 
-MicroNet is still under development any many aspects are still not covered by the framework. In this regard, MicroNet provides the *MicroNet Console* which shows all errors that happened in the background. Be sure to check it regularly or specifically if something failed scilently in the background. The MicroNet console is available via the pull-down menu of the Service Explorer as indicated in the image below.
+MicroNet is still under development any many aspects are still not covered by the framework. In this regard, MicroNet provides the *MicroNet Console* which shows all errors that happened in the background. Be sure to check it regularly or specifically if something failed silently in the background. The MicroNet console is available via the pull-down menu of the Service Explorer as indicated in the image below.
 
 ![#micronet-console](OpeningConsole.PNG "Open the MicroNet Console")
 

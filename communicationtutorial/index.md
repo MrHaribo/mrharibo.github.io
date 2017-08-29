@@ -45,7 +45,7 @@ Using the MicroNet Service Catalog add the *mn-archetype-simpleservice* to your 
 
 ![#project-explorer](ProjectExplorer.PNG "Project Explorer showing a Service Project")
 
-This class can be thought of as the *Main Class* of the service and is used as an entrypoint to inject domain logic into the service. The Service created by the *mn-archetype-simpleservice* archetype is already prepared to be tested right away. Make sure ActiveMQ is running and start the container as a local Java application using the context menu action *Debug/RunServiceNative* in the Service Explorer as shwon in the image below. Check the console as the service starts up and sends itself a message. If you are using Docker Toolbox you most likely get a connection error. See [below](#connecting-with-docker-toolbox) how to deal with this.
+This class can be thought of as the *Main Class* of the service and is used as an entry-point to inject domain logic into the service. The Service created by the *mn-archetype-simpleservice* archetype is already prepared to be tested right away. Make sure ActiveMQ is running and start the container as a local Java application using the context menu action *Debug/RunServiceNative* in the Service Explorer as shown in the image below. Check the console as the service starts up and sends itself a message. If you are using Docker Toolbox you most likely get a connection error. See [below](#connecting-with-docker-toolbox) how to deal with this.
 
 You can also perform a *Full Service Build* and start the service in a container but be sure to remove it afterwards via the Docker Explorer or you will not be able to start it again due to a naming collision.
 
@@ -75,7 +75,7 @@ How to retrieve the *docker-machine-ip* is explained in the section above. You h
 
 ## Adding a Communication Partner
 
-Of course one service does not make up a very interessting distributed application so we spice things up a little by adding a communication partner for our lonely *FooService*. But before we do that, we need to ensure that we give FooService a proper address so it can be found by other services or by the users of the application later on. In the *Main Class* of **FooService** edit the `@MessageService` annotation and enter a valid URI e.g. "mn://foo". The protocol portion "mn://" of the URI is required for a service to be recognized by a MicroNet application. Additionally, in the ServiceFoo class remove the 
+Of course one service does not make up a very interesting distributed application so we spice things up a little by adding a communication partner for our lonely *FooService*. But before we do that, we need to ensure that we give FooService a proper address so it can be found by other services or by the users of the application later on. In the *Main Class* of **FooService** edit the `@MessageService` annotation and enter a valid URI e.g. "mn://foo". The protocol portion "mn://" of the URI is required for a service to be recognized by a MicroNet application. Additionally, in the ServiceFoo class remove the 
 
 ```java
 context.sendRequest("mn://fooservice/hello/world/handler", new Request("Hello"));
@@ -124,7 +124,7 @@ public class BarService {
 }
 ```
 
-To test the communication between the two services you must first ensure that no old service instances are running which may interfere with our new services. Check this on the *Debug View* in the Java *Debug Perspective* and in the container section in the *Docker Explorer*. You can leave ActiveMQ running because we still need it. After this clean-up start both services using your prefered method. The order does not matter since the message that is sent by BarService is buffered by ActiveMQ and will be delivered as soon as FooService is available. Check the Console of both services to see if the communication was successful.
+To test the communication between the two services you must first ensure that no old service instances are running which may interfere with our new services. Check this on the *Debug View* in the Java *Debug Perspective* and in the container section in the *Docker Explorer*. You can leave ActiveMQ running because we still need it. After this clean-up start both services using your preferred method. The order does not matter since the message that is sent by BarService is buffered by ActiveMQ and will be delivered as soon as FooService is available. Check the Console of both services to see if the communication was successful.
 
 ## Whats Next
 
